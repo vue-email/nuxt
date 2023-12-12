@@ -33,6 +33,9 @@ jobs:
       - name: Lint
         run: nr lint
 
+      - name: Prepare
+        run: nr dev:prepare
+
       - name: Build
         run: nr build
 
