@@ -53,7 +53,6 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.vueEmail = defu(nuxt.options.runtimeConfig.public.vueEmail, options)
 
-
     // if (!nuxt.options.build.transpile) nuxt.options.build.transpile = []
     // const transpileList = ['vue-email']
     // transpileList.forEach((pkgName) => {
