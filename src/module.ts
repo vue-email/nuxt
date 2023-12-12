@@ -53,11 +53,11 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.vueEmail = defu(nuxt.options.runtimeConfig.public.vueEmail, options)
 
-    // if (!nuxt.options.build.transpile) nuxt.options.build.transpile = []
-    // const transpileList = ['vue-email']
-    // transpileList.forEach((pkgName) => {
-    //   if (!nuxt.options.build.transpile.includes(pkgName)) nuxt.options.build.transpile.push(pkgName)
-    // })
+    if (!nuxt.options.build.transpile) nuxt.options.build.transpile = []
+    const transpileList = ['defu','vue-email']
+    transpileList.forEach((pkgName) => {
+      if (!nuxt.options.build.transpile.includes(pkgName)) nuxt.options.build.transpile.push(pkgName)
+    })
 
     nuxt.hook('nitro:config', (nitroConfig) => {
       nitroConfig.alias = nitroConfig.alias || {}
