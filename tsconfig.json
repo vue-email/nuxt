@@ -1,0 +1,8 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "exclude": ["client", "dist"],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": false
+  }
+}
