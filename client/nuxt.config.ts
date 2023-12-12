@@ -1,3 +1,4 @@
+import { resolve } from 'pathe'
 import { defineNuxtConfig } from 'nuxt/config'
 import vueEmailModule from '../src/module'
 
@@ -8,9 +9,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NODE_ENV === 'development' ? undefined : '/__vue_email__/client',
   },
-  vite: {
-    build: {
-      target: 'esnext',
+  nitro: {
+    output: {
+      publicDir: resolve(__dirname, '../dist/client'),
     },
   },
   ui: {
