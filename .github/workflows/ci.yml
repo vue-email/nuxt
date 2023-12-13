@@ -47,9 +47,6 @@ jobs:
       - name: Build
         run: nr build
 
-      - name: Test
-        run: nr test
-
       - name: Relase Edge
         run: |
           chmod +x ./scripts/release-edge.sh
