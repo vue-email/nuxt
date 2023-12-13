@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  vueEmail: {},
-  devtools: { enabled: true }
+  vueEmail: {
+    baseUrl: 'https://vue-email-demo.vercel.app/',
+    playground: false,
+  },
+  devtools: { enabled: true },
 })

@@ -1,7 +1,6 @@
 import type { RenderOptions } from '@vue-email/compiler'
 import { templateRender } from '@vue-email/compiler'
-import { useRuntimeConfig, useStorage } from '#imports'
-import type { ModuleOptions } from '~/src/module'
+import type { ModuleOptions } from '../../../module'
 
 const storageKey = 'assets:emails'
 
@@ -32,16 +31,18 @@ export async function useCompiler(filename: string, data?: RenderOptions, verbos
   }[] = []
   for (const key of keys) {
     const value = await useStorage(storageKey).getItem(key)
+
     if (value && key.endsWith('.vue')) {
       components.push({
         name: key,
-        source: value,
+        source: value as string,
       })
     }
   }
 
+  if(!source) throw new Error(`Template ${filename} not found`)
 
-  const template = await templateRender(filename, { source, components }, data, {
+  const template = await templateRender(filename, { source: source as string, components }, data, {
     verbose,
     options: {
       baseUrl: vueEmailOptions?.baseUrl,

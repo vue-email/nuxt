@@ -1,4 +1,4 @@
-import { addComponent, addComponentsDir, addImportsSources, addPlugin, addServerHandler, addTemplate, createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, addComponentsDir, addImportsSources, addServerHandler, addTemplate, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
 import sirv from 'sirv'
 import type { I18n } from 'vue-email'
@@ -35,7 +35,11 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'vue-email',
-    configKey: 'vueEmail'
+    configKey: 'vueEmail',
+    compatibility: {
+      nuxt: '^3.0.0',
+      bridge: false,
+    },
   },
   // Default configuration options of the Nuxt module
   defaults(nuxt) {
@@ -64,7 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
       nitroConfig.externals = defu(typeof nitroConfig.externals === 'object' ? nitroConfig.externals : {}, {
         inline: [resolve('./runtime')],
       })
-      nitroConfig.alias['#vue-email'] = resolve('./runtime/server/services')
+      nitroConfig.alias['#vue-email'] = resolve('./runtime/server/nitro')
 
       nitroConfig.serverAssets = nitroConfig.serverAssets || []
       nitroConfig.serverAssets.push({
@@ -110,7 +114,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     addTemplate({
       filename: 'types/vue-email.d.ts',
-      getContents: () => ["declare module '#vue-email' {", `  const useCompiler: typeof import('${resolve('./runtime/server/services')}').useCompiler`, '}'].join('\n'),
+      getContents: () => ["declare module '#vue-email' {", `  const useCompiler: typeof import('${resolve('./runtime/server/nitro')}').useCompiler`, '}'].join('\n'),
     })
 
     nuxt.hook('prepare:types', (options) => {
@@ -119,7 +123,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     })
 
-    addPlugin(resolve('./runtime/plugin'))
+    // addPlugin(resolve('./runtime/plugins/vue-email'))
 
     components.forEach((component) => {
       addComponent({
