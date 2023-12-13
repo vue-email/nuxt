@@ -1,7 +1,7 @@
 import type { RenderOptions } from '@vue-email/compiler'
 import { templateRender } from '@vue-email/compiler'
 import type { ModuleOptions } from '../../../module'
-import { useRuntimeConfig } from '#imports'
+import { useRuntimeConfig, useStorage } from '#imports'
 
 const storageKey = 'assets:emails'
 
