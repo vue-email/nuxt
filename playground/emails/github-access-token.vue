@@ -41,9 +41,9 @@ const button = {
   fontSize: '14px',
   backgroundColor: '#28a745',
   color: '#fff',
+  lineHeight: 1.5,
   borderRadius: '0.5em',
-  padding: '0.3em 0.6em',
-  textTransform: 'uppercase',
+  padding: '0.75em 1.5em',
 } as CSSProperties
 
 const links = {
@@ -82,6 +82,9 @@ const footer = {
         <ESection :style="section">
           <EText :style="text">
             Hey <strong>{{ username }}</strong>!
+          </EText>
+          <EText :style="text">
+            {{ $t('title') }}
           </EText>
           <EText :style="text">
             A fine-grained personal access token (<ELink href="#">
