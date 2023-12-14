@@ -47,14 +47,11 @@
     "test:watch": "vitest watch",
     "release": "bumpp"
   },
-  "peerDependencies": {
-    "vue": "3.3.4"
-  },
   "dependencies": {
     "@nuxt/kit": "^3.8.2",
     "defu": "^6.1.3",
     "vue-email": "npm:vue-email-edge@0.8.0-beta.12-28375102.307d82a",
-    "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.0-beta.8-28375102.db63dc2",
+    "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.0-beta.8-28375895.d4af203",
     "sirv": "^2.0.3"
   },
   "devDependencies": {
