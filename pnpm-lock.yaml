@@ -12,8 +12,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: npm:@vue-email/compiler-edge@0.8.0-beta.8-28375924.ef80a70
-        version: /@vue-email/compiler-edge@0.8.0-beta.8-28375924.ef80a70(typescript@5.3.3)(vue@3.3.11)
+        specifier: 0.8.0-beta.9
+        version: 0.8.0-beta.9(typescript@5.3.3)(vue@3.3.11)
       defu:
         specifier: ^6.1.3
         version: 6.1.3
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       vue-email:
-        specifier: npm:vue-email-edge@0.8.0-beta.12-28375102.307d82a
-        version: /vue-email-edge@0.8.0-beta.12-28375102.307d82a(vue@3.3.11)
+        specifier: 0.8.0-beta.13
+        version: 0.8.0-beta.13(vue@3.3.11)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2754,8 +2754,8 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/compiler-edge@0.8.0-beta.8-28375924.ef80a70(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-VjlVp19lcqYArbPUGqKb0dUi4XFZQd2vzE+h+xCFz2pEfcBPy4fiqOUxif8BLBrdml/JgcAEEPYsPUijM6vM5A==}
+  /@vue-email/compiler@0.8.0-beta.9(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-5NFw/jz9NMl5D/K4mjxW49E6lFm2tbSSEcRR2pCDMg97EaUr9g3C9AvzUP/p12IhYkN8OS8HmKAdNBH2FigfqA==}
     peerDependencies:
       vue: 3.3.8
     dependencies:
@@ -2763,7 +2763,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.1.1
       vue: 3.3.11(typescript@5.3.3)
-      vue-email: /vue-email-edge@0.8.0-beta.12-28375092.2ece7a0(vue@3.3.11)
+      vue-email: 0.8.0-beta.13(vue@3.3.11)
       vue-i18n: 9.8.0(vue@3.3.11)
     transitivePeerDependencies:
       - bufferutil
@@ -9254,23 +9254,8 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email-edge@0.8.0-beta.12-28375092.2ece7a0(vue@3.3.11):
-    resolution: {integrity: sha512-Y13+Q3yFStC7ioXnUBrxe469QiyODNKHd38eexsNaKj9rU8685a7PjaJI7jBmetH3aQ3SVKOW06i4wSidBwCRQ==}
-    dependencies:
-      '@flowko/tw-to-css': 0.0.6
-      isomorphic-dompurify: 1.12.0
-      ufo: 1.3.2
-      vue-i18n: 9.8.0(vue@3.3.11)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - utf-8-validate
-      - vue
-    dev: false
-
-  /vue-email-edge@0.8.0-beta.12-28375102.307d82a(vue@3.3.11):
-    resolution: {integrity: sha512-XtoPKpdOTGpr1zEwkS8deYS3AiG55rDRbWnYD3k98hOGggUWfqXMGSzQxkCy3BBpxX0+25LfL/zmP7/5YS1YcQ==}
+  /vue-email@0.8.0-beta.13(vue@3.3.11):
+    resolution: {integrity: sha512-ViIb7A/YPny/B+yqXgOFlQjZoh5BQyv+7/cIEUaopGnI8r+YP8bFdZdyahb984+Lf2FbG4iLIIphLIGNR/2O+g==}
     peerDependencies:
       vue: 3.3.4
     dependencies:

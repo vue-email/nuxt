@@ -50,8 +50,8 @@
   "dependencies": {
     "@nuxt/kit": "^3.8.2",
     "defu": "^6.1.3",
-    "vue-email": "npm:vue-email-edge@0.8.0-beta.12-28375102.307d82a",
-    "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.0-beta.8-28375924.ef80a70",
+    "vue-email": "0.8.0-beta.13",
+    "@vue-email/compiler": "0.8.0-beta.9",
     "sirv": "^2.0.3"
   },
   "devDependencies": {
