@@ -16,10 +16,10 @@ const isEmailRoute = computed(() => route.name === 'email-file')
       <UButton icon="i-ph-arrow-counter-clockwise-bold" size="sm" color="gray" variant="solid" @click="reloadTemplate = true" />
     </UTooltip>
     <UTooltip text="Read Documentation">
-      <UButton icon="i-ph-read-cv-logo-bold" size="sm" color="gray" variant="solid" label="Docs" to="https://www.vuemail.net/" target="_blank" />
+      <UButton icon="i-ph-read-cv-logo-bold" size="sm" color="gray" variant="solid" label="Docs" to="https://vuemail.net/" target="_blank" />
     </UTooltip>
     <UTooltip text="View Github Repo">
-      <UButton icon="i-simple-icons-github" size="sm" color="gray" variant="solid" to="https://github.com/Dave136/vue-email" target="_blank" />
+      <UButton icon="i-simple-icons-github" size="sm" color="gray" variant="solid" to="https://github.com/vue-email/vue-email" target="_blank" />
     </UTooltip>
   </div>
 </template>
