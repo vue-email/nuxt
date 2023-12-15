@@ -1,8 +1,10 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
+  extends: [
+    './nuxt-layer'
+  ],
   vueEmail: {
     baseUrl: 'https://vue-email-demo.vercel.app/',
-    playground: false,
     i18n: {
       defaultLocale: 'fr',
       translations: {
@@ -18,6 +20,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    autoImport: false
   },
   devtools: { enabled: true },
 

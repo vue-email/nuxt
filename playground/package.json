@@ -6,7 +6,8 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "analyze": "nuxt analyze"
   },
   "devDependencies": {
     "nuxt": "latest"
