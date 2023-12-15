@@ -1,25 +1,36 @@
-<!--
-Get your module up and running quickly.
+[![vue-email](https://github.com/vue-email/vue-email/blob/main/public/repo-banner.png?raw=true)](https://vuemail.net)
 
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: @vue-email/nuxt
-- Description: My new Nuxt module
--->
 
-# Vue Email Nuxt Module
-
+<div align="center">
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-Vue Email Nuxt Module.
+</div>
 
-## Documentation
+# @vue-email/nuxt
 
-Visit https://www.vuemail.net/ssr/nuxt to explore the documentation.
+Official Nuxt module for Vue Email. Build email templates with Vue components.
+
+- [✨ &nbsp;Release Notes](https://github.com/vue-email/nuxt/releases)
+- [📖 &nbsp;Documentation](https://vuemail.net/ssr/nuxt)
+
+## Features
+
+- Auto-import Vue Email components and composables
+- `useCompiler` utility to render emails on the server
+- All the DX Magic that comes with Nuxt ✨
+- Vue Email DevTools integration
+
+## Ecosystem
+
+| Package                     | Version                                                                                            |
+| --------------------------- | :------------------------------------------------------------------------------------------------- |
+| [Vue-Email](https://github.com/vue-email/vue-email)       | ![tres version](https://img.shields.io/npm/v/vue-email/latest.svg?label=%20&colorB=1fa669) |
+| [Nuxt](https://github.com/vue-email/nuxt) | ![nuxt version](https://img.shields.io/npm/v/@vue-email/nuxt/latest.svg?label=%20&color=4f4f4f&logo=nuxt.js) |
+[SSR Compiler](https://github.com/vue-email/compiler) | ![cientos version](https://img.shields.io/npm/v/@vue-email/compiler/latest.svg?label=%20&colorB=1fa669)
 
 
 ## Quick Setup
