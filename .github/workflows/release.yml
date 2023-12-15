@@ -1,8 +1,5 @@
 name: Release
 
-permissions:
-  contents: write
-
 on:
   push:
     tags:
@@ -11,10 +8,14 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: read
+      contents: write
+
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
