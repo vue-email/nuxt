@@ -12,8 +12,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: npm:@vue-email/compiler-edge@0.8.0-28377780.eecfece
-        version: /@vue-email/compiler-edge@0.8.0-28377780.eecfece(typescript@5.3.3)(vue@3.3.11)
+        specifier: 0.8.1
+        version: 0.8.1(typescript@5.3.3)(vue@3.3.11)
       defu:
         specifier: ^6.1.3
         version: 6.1.3
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       vue-email:
-        specifier: npm:vue-email-edge@0.8.0-28377777.28f5ebc
-        version: /vue-email-edge@0.8.0-28377777.28f5ebc(vue@3.3.11)
+        specifier: 0.8.1
+        version: 0.8.1(vue@3.3.11)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2754,8 +2754,8 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/compiler-edge@0.8.0-28377780.eecfece(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-XeF1q3ikn3Lmp9v6oaRzGu2sDzqr95Oht0NYgJD87+x3n2jqhrTAG0pFznXumnuPj+mAtHafmuQScNiwHRVrIw==}
+  /@vue-email/compiler@0.8.1(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-R22S/KgxTKukX0oeCP/KUactU0yXNZj/SpumzqBXHG2qcNOHExafoKqAPOW9G6nfxjZTRjAdpQ8ChYmwUo6ieA==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -2763,7 +2763,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.1.1
       vue: 3.3.11(typescript@5.3.3)
-      vue-email: /vue-email-edge@0.8.0-28377777.28f5ebc(vue@3.3.11)
+      vue-email: 0.8.1(vue@3.3.11)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9252,8 +9252,8 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email-edge@0.8.0-28377777.28f5ebc(vue@3.3.11):
-    resolution: {integrity: sha512-nbPnq3vB2NmxJYdM2oxW0i9unVy5loMxkAwjXGMwXdxBRF1u3aoPse3hXrWABmQkmWZX+Wc6fVz/lZUIcbdJ0g==}
+  /vue-email@0.8.1(vue@3.3.11):
+    resolution: {integrity: sha512-Zen3dxiremgqLHgEmnSlZlypSUls7RW6raRG0ug7TBKCTPKGR+EdDmExkoTl4W9BdqyrPmskN0wFQRMI5XFvtg==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
