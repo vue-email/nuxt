@@ -1,6 +1,6 @@
 import pretty from 'pretty'
-import { convert } from 'html-to-text'
 import type { Email } from '@/types/email'
+import type { Result } from '@vue-email/compiler'
 
 export function useEmail() {
   const emails = useState<Email[]>('emails')
@@ -33,20 +33,15 @@ export function useEmail() {
   const renderEmail = async () => {
     if (!email.value) return null
 
-    const { data } = await useFetch<string>(`/api/render/${email.value.filename}`, {
+    const { data } = await useFetch<Result>(`/api/render/${email.value.filename}`, {
       baseURL: host.value,
     })
 
     if (data.value)
       return {
         vue: email.value.content,
-        html: pretty(data.value),
-        txt: convert(data.value, {
-          selectors: [
-            { selector: 'img', format: 'skip' },
-            { selector: '#__vue-email-preview', format: 'skip' },
-          ],
-        }),
+        html: pretty(data.value.html),
+        txt: data.value.text,
       }
 
     return null

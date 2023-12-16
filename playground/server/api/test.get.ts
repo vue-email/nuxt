@@ -10,7 +10,9 @@ export default defineEventHandler(async () => {
       console.error(error);
     })
 
-    return template
+    if(!template) return null
+
+    return template.html
   } catch (error) {
     console.error(error);
 
