@@ -12,8 +12,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: 0.8.2
-        version: 0.8.2(typescript@5.3.3)(vue@3.3.11)
+        specifier: npm:@vue-email/compiler-edge@0.8.2-28383408.6163ed2
+        version: /@vue-email/compiler-edge@0.8.2-28383408.6163ed2(typescript@5.3.3)(vue@3.3.11)
       defu:
         specifier: ^6.1.3
         version: 6.1.3
@@ -2738,8 +2738,8 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/compiler@0.8.2(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-OZlHK2NcuPsWw1DXILpRdt3P3wrugol3Ly39lU986t7QHB+UfGvJzJsBUiOleKjinQlgTCx7FqrBXAFjct9DCA==}
+  /@vue-email/compiler-edge@0.8.2-28383408.6163ed2(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-0zVv4gZGKS5BafNZBenFo+gr+8vo8gJWOrGqyk30fTW9Z1hx+18NmCb8z729EaZyCskx5dpYDpSekDBj3/0Y2Q==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
