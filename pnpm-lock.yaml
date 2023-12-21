@@ -12,8 +12,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: 0.8.2
-        version: 0.8.2(typescript@5.3.3)(vue@3.3.11)
+        specifier: 0.8.3
+        version: 0.8.3(typescript@5.3.3)(vue@3.3.11)
       defu:
         specifier: ^6.1.3
         version: 6.1.3
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       vue-email:
-        specifier: 0.8.2
-        version: 0.8.2(vue@3.3.11)
+        specifier: 0.8.4
+        version: 0.8.4(typescript@5.3.3)(vue@3.3.11)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2738,8 +2738,22 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/compiler@0.8.2(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-OZlHK2NcuPsWw1DXILpRdt3P3wrugol3Ly39lU986t7QHB+UfGvJzJsBUiOleKjinQlgTCx7FqrBXAFjct9DCA==}
+  /@vue-email/cli@0.0.7(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-v1JtVP1wv1t32f0G6Il/VW1pqe42rM51CoW07SqUTL4kSm6yNeAhOLwUtUL9+P1nFu79sGkJLLpa3pAow182+w==}
+    hasBin: true
+    dependencies:
+      '@vue-email/compiler': 0.8.3(typescript@5.3.3)(vue@3.3.11)
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - typescript
+      - utf-8-validate
+      - vue
+    dev: false
+
+  /@vue-email/compiler@0.8.3(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-yWpcc2aB+b5qH2B62efzBIGh53uPrisg+gcllYnpR+DNfHbP8RUXVVhdm715IsCktNFTkc1HWLqwhEQ6GB7n/A==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -2747,7 +2761,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.1.1
       vue: 3.3.11(typescript@5.3.3)
-      vue-email: 0.8.2(vue@3.3.11)
+      vue-email: 0.8.4(typescript@5.3.3)(vue@3.3.11)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9014,12 +9028,14 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email@0.8.2(vue@3.3.11):
-    resolution: {integrity: sha512-9F4F069Pz30UXDMbWC0uCmJUFsBnqtdkoGq21sfAqsxRWABNzY0yvZwIsHRcKMwgOr1I4g4KhLL7C8vGoIxwzA==}
+  /vue-email@0.8.4(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-7nID27g5AZQIf8qaGU+Rqwx0pKt6fp/74vwclH5jD8KwIhQMny1KqQ4votMnpr+WqN2pVeXELNAiKgV6X8K6hg==}
+    hasBin: true
     peerDependencies:
       vue: ^3.3.8
     dependencies:
       '@flowko/tw-to-css': 0.0.6
+      '@vue-email/cli': 0.0.7(typescript@5.3.3)(vue@3.3.11)
       isomorphic-dompurify: 1.12.0
       ufo: 1.3.2
       vue: 3.3.11(typescript@5.3.3)
@@ -9028,6 +9044,7 @@ packages:
       - bufferutil
       - canvas
       - supports-color
+      - typescript
       - utf-8-validate
     dev: false
 
