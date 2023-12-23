@@ -12,6 +12,7 @@ const components = [
   'EContainer',
   'EFont',
   'EHead',
+  'EStyle',
   'EHeading',
   'EHr',
   'EHtml',
