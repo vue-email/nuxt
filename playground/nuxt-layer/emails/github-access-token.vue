@@ -9,7 +9,7 @@ defineProps({
 })
 
 const main = {
-  backgroundColor: '#ffffff',
+  // backgroundColor: '#ffffff',
   color: '#24292e',
   fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
 } as CSSProperties
@@ -65,7 +65,13 @@ const footer = {
 
 <template>
   <EHtml>
-    <EHead />
+    <EHead>
+      <EStyle>
+        body {
+        background-color: #f6f8fa;
+        }
+      </EStyle>
+    </EHead>
     <EPreview> A fine-grained personal access token has been added to your account </EPreview>
     <EBody :style="main">
       <EContainer :style="container">
