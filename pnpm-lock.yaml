@@ -12,8 +12,8 @@ importers:
         specifier: ^3.8.2
         version: 3.8.2(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: ^0.8.5
-        version: 0.8.5(typescript@5.3.3)(vue@3.3.11)
+        specifier: ^0.8.7
+        version: 0.8.7(typescript@5.3.3)(vue@3.3.11)
       defu:
         specifier: ^6.1.3
         version: 6.1.3
@@ -2728,11 +2728,11 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/cli@0.0.8(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-3yZ4evvkbkITRdEONQ/DepTolXsfFr4OSZm65YwEj2KuTFFWQQAyEKe2+evwuigFEYRECcCEw2k6J/110TJ20w==}
+  /@vue-email/cli@0.0.9(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-cpowdprs+KPkpChboy27vIdDPVaM/k94OdufO9ldMnLiKTNDx2j89wCwv+J00IKwFaz1KrfgJrkDiCOoPO2pHA==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.5(typescript@5.3.3)(vue@3.3.11)
+      '@vue-email/compiler': 0.8.7(typescript@5.3.3)(vue@3.3.11)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -2743,8 +2743,8 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler@0.8.5(typescript@5.3.3)(vue@3.3.11):
-    resolution: {integrity: sha512-8yL8clm+cm7qEyrtF7w67QdWA7DT/7mfcFzFrQxJ3lDEFXIVv6sGJkh75l0lqRWIp2lVx1LZFydvclz6ZRP1TA==}
+  /@vue-email/compiler@0.8.7(typescript@5.3.3)(vue@3.3.11):
+    resolution: {integrity: sha512-tBeJqDyiiBXvvSx38GJMv9eZo+ZNknP2JKEGm6UztWTH8slljnceRx8Z4Sr3gBlcGBZcyKqVgdY/eTT4mfgyag==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -8975,7 +8975,7 @@ packages:
     peerDependencies:
       vue: ^3.3.8
     dependencies:
-      '@vue-email/cli': 0.0.8(typescript@5.3.3)(vue@3.3.11)
+      '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.3.11)
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 1.12.0
       ufo: 1.3.2
