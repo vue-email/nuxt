@@ -21,5 +21,8 @@ const isEmailRoute = computed(() => route.name === 'email-file')
     <UTooltip text="View Github Repo">
       <UButton icon="i-simple-icons-github" size="sm" color="gray" variant="solid" to="https://github.com/vue-email/vue-email" target="_blank" />
     </UTooltip>
+    <UTooltip text="Sponsor Vue Email">
+      <UButton icon="i-ph-hand-heart-duotone" size="sm" color="gray" variant="solid" to="https://github.com/sponsors/vue-email" target="_blank" />
+    </UTooltip>
   </div>
 </template>

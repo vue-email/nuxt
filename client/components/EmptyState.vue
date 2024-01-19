@@ -47,29 +47,29 @@ const items = [
 
 <template>
   <div class="h-screen flex justify-center">
-    <div class="max-w-3xl px-4 md:px-8 py-20 md:py-40">
+    <div class="max-w-3xl px-4 md:px-8 py-10 md:py-20">
       <div class="text-center">
         <UIcon name="i-twemoji-incoming-envelope" class="w-20 h-20" />
-        <h2 class="text-xl text-gray-100 font-medium">Welcome to the Vue Email Dev Tools!</h2>
-        <p class="mt-2 mb-4 text-sm text-gray-100 font-normal">
+        <h2 class="text-xl text-gray-800 dark:text-gray-100 font-medium">Welcome to the Vue Email Dev Tools!</h2>
+        <p class="mt-2 mb-4 text-sm text-gray-800 dark:text-gray-100 font-normal">
           To start developing your next email template, you can create a
           <UKbd>.vue</UKbd> file under the <UKbd>emails</UKbd> folder.
         </p>
       </div>
 
-      <ul role="list" class="mt-6 grid grid-cols-1 gap-6 border-b border-t border-gray-500 py-6 sm:grid-cols-2">
+      <ul role="list" class="mt-6 grid grid-cols-1 gap-6 border-b border-t border-gray-200 dark:border-gray-500 py-6 sm:grid-cols-2">
         <li v-for="(item, itemIdx) in items" :key="itemIdx" class="flow-root">
-          <NuxtLink target="_blank" :to="item.to" external class="relative -m-2 flex items-center space-x-4 rounded-xl p-2 hover:bg-gray-800">
+          <NuxtLink target="_blank" :to="item.to" external class="relative -m-2 flex items-center space-x-4 rounded-xl p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
             <div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg" :class="[item.background]">
               <UIcon :name="item.icon" class="h-7 w-7 text-white" aria-hidden="true" />
             </div>
             <div>
-              <h3 class="text-sm font-medium text-gray-100 focus:outline-none">
+              <h3 class="text-sm font-medium dark:text-gray-100 text-gray-800 focus:outline-none">
                 <span class="absolute inset-0" aria-hidden="true" />
                 <span>{{ item.title }}</span>
                 <span aria-hidden="true"> &rarr;</span>
               </h3>
-              <p class="mt-1 text-sm text-gray-300">{{ item.description }}</p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{{ item.description }}</p>
             </div>
           </NuxtLink>
         </li>
