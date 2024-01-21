@@ -12,8 +12,8 @@ importers:
         specifier: ^3.9.3
         version: 3.9.3(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: npm:@vue-email/compiler-edge@0.8.7-28430635.6a51ca4
-        version: /@vue-email/compiler-edge@0.8.7-28430635.6a51ca4(typescript@5.3.3)(vue@3.4.15)
+        specifier: ^0.8.8
+        version: 0.8.8(typescript@5.3.3)(vue@3.4.15)
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       vue-email:
-        specifier: npm:vue-email-edge@0.8.5-28430632.51e5adc
-        version: /vue-email-edge@0.8.5-28430632.51e5adc(typescript@5.3.3)(vue@3.4.15)
+        specifier: ^0.8.6
+        version: 0.8.6(typescript@5.3.3)(vue@3.4.15)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -155,6 +155,14 @@ packages:
   /@antfu/utils@0.7.7:
     resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
     dev: true
+
+  /@asamuzakjp/dom-selector@2.0.2:
+    resolution: {integrity: sha512-x1KXOatwofR6ZAYzXRBL5wrdV0vwNxlTCK9NCuLqAzQYARqGcvFwiJA6A1ERuh+dgeA4Dxm3JBYictIes+SqUQ==}
+    dependencies:
+      bidi-js: 1.0.3
+      css-tree: 2.3.1
+      is-potential-custom-element-name: 1.0.1
+    dev: false
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
@@ -1311,24 +1319,24 @@ packages:
       vue: 3.4.15(typescript@5.3.3)
     dev: true
 
-  /@intlify/core-base@9.8.0:
-    resolution: {integrity: sha512-UxaSZVZ1DwqC/CltUZrWZNaWNhfmKtfyV4BJSt/Zt4Or/fZs1iFj0B+OekYk1+MRHfIOe3+x00uXGQI4PbO/9g==}
+  /@intlify/core-base@9.9.0:
+    resolution: {integrity: sha512-C7UXPymDIOlMGSNjAhNLtKgzITc/8BjINK5gNKXg8GiWCTwL6n3MWr55czksxn8RM5wTMz0qcLOFT+adtaVQaA==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/message-compiler': 9.8.0
-      '@intlify/shared': 9.8.0
+      '@intlify/message-compiler': 9.9.0
+      '@intlify/shared': 9.9.0
     dev: false
 
-  /@intlify/message-compiler@9.8.0:
-    resolution: {integrity: sha512-McnYWhcoYmDJvssVu6QGR0shqlkJuL1HHdi5lK7fNqvQqRYaQ4lSLjYmZxwc8tRNMdIe9/KUKfyPxU9M6yCtNQ==}
+  /@intlify/message-compiler@9.9.0:
+    resolution: {integrity: sha512-yDU/jdUm9KuhEzYfS+wuyja209yXgdl1XFhMlKtXEgSFTxz4COZQCRXXbbH8JrAjMsaJ7bdoPSLsKlY6mXG2iA==}
     engines: {node: '>= 16'}
     dependencies:
-      '@intlify/shared': 9.8.0
+      '@intlify/shared': 9.9.0
       source-map-js: 1.0.2
     dev: false
 
-  /@intlify/shared@9.8.0:
-    resolution: {integrity: sha512-TmgR0RCLjzrSo+W3wT0ALf9851iFMlVI9EYNGeWvZFUQTAJx0bvfsMlPdgVtV1tDNRiAfhkFsMKu6jtUY1ZLKQ==}
+  /@intlify/shared@9.9.0:
+    resolution: {integrity: sha512-1ECUyAHRrzOJbOizyGufYP2yukqGrWXtkmTu4PcswVnWbkcjzk3YQGmJ0bLkM7JZ0ZYAaohLGdYvBYnTOGYJ9g==}
     engines: {node: '>= 16'}
     dev: false
 
@@ -3281,7 +3289,7 @@ packages:
     resolution: {integrity: sha512-cpowdprs+KPkpChboy27vIdDPVaM/k94OdufO9ldMnLiKTNDx2j89wCwv+J00IKwFaz1KrfgJrkDiCOoPO2pHA==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.7(typescript@5.3.3)(vue@3.4.15)
+      '@vue-email/compiler': 0.8.8(typescript@5.3.3)(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -3292,35 +3300,16 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler-edge@0.8.7-28430635.6a51ca4(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-fS0t1ISail/pjL/+r/IHF3dEskRwfWDRELutJDLjuayRBaikbNDxST2f3vvJe0XWZpNL0EjVF7HZdy2QVlEyHA==}
+  /@vue-email/compiler@0.8.8(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-oYYFxps8c7KJ1/pg72JfoBAhzq0PJCRx+YsUhv++t062G281vrPcMn36MfDtPPejn3cafBWU5H2P6d2HvrBY1g==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
-      import-string: 0.1.0(typescript@5.3.3)
+      import-string: 0.1.2(typescript@5.3.3)
       kolorist: 1.8.0
       scule: 1.2.0
       vue: 3.4.15(typescript@5.3.3)
-      vue-email: /vue-email-edge@0.8.5-28430632.51e5adc(typescript@5.3.3)(vue@3.4.15)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: false
-
-  /@vue-email/compiler@0.8.7(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-tBeJqDyiiBXvvSx38GJMv9eZo+ZNknP2JKEGm6UztWTH8slljnceRx8Z4Sr3gBlcGBZcyKqVgdY/eTT4mfgyag==}
-    peerDependencies:
-      vue: ^3.3.8
-    dependencies:
-      import-string: 0.1.0(typescript@5.3.3)
-      kolorist: 1.8.0
-      scule: 1.2.0
-      vue: 3.4.15(typescript@5.3.3)
-      vue-email: 0.8.5(typescript@5.3.3)(vue@3.4.15)
+      vue-email: 0.8.6(typescript@5.3.3)(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -3949,6 +3938,12 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: true
 
+  /bidi-js@1.0.3:
+    resolution: {integrity: sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==}
+    dependencies:
+      require-from-string: 2.0.2
+    dev: false
+
   /big-integer@1.6.52:
     resolution: {integrity: sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==}
     engines: {node: '>=0.6'}
@@ -4484,7 +4479,6 @@ packages:
     dependencies:
       mdn-data: 2.0.30
       source-map-js: 1.0.2
-    dev: true
 
   /css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
@@ -4619,9 +4613,9 @@ packages:
       css-tree: 2.2.1
     dev: true
 
-  /cssstyle@3.0.0:
-    resolution: {integrity: sha512-N4u2ABATi3Qplzf0hWbVCdjenim8F3ojEXpBDF5hBpjzW182MjNGLqfmQ0SkSPeQ+V86ZXgeH8aXj6kayd4jgg==}
-    engines: {node: '>=14'}
+  /cssstyle@4.0.1:
+    resolution: {integrity: sha512-8ZYiJ3A/3OkDd093CBT/0UKDWry7ak4BdPTFP2+QEP7cmhouyq/Up709ASSj2cK02BbZiMgk7kYjZNS4QP5qrQ==}
+    engines: {node: '>=18'}
     dependencies:
       rrweb-cssom: 0.6.0
     dev: false
@@ -4829,8 +4823,8 @@ packages:
       domelementtype: 2.3.0
     dev: true
 
-  /dompurify@3.0.6:
-    resolution: {integrity: sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==}
+  /dompurify@3.0.8:
+    resolution: {integrity: sha512-b7uwreMYL2eZhrSCRC4ahLTeZcPZxSmYfmcQGXGkXiZSNW1X85v+SDM5KsWcpivIiUBH47Ji7NtyUdpLeF5JZQ==}
     dev: false
 
   /domutils@3.1.0:
@@ -6069,8 +6063,8 @@ packages:
       resolve-from: 4.0.0
     dev: true
 
-  /import-string@0.1.0(typescript@5.3.3):
-    resolution: {integrity: sha512-T65Iwz31bzXlp5xP+uxwRSZDefyH/7cBw0SquWuNksdetqrGIOWIAoPo3m5pYXgrw8Jj850jLTxNJJyw1wweXw==}
+  /import-string@0.1.2(typescript@5.3.3):
+    resolution: {integrity: sha512-tOL7q/mHqoibjr5cm+S5yJv51t6YXVyBCBC5/q6zIbkPiKlvlOEUfpSze5CQX5ygqTIXpjyfFsOJoxe6PqiCVQ==}
     peerDependencies:
       typescript: ^5.0.0
     dependencies:
@@ -6293,13 +6287,13 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /isomorphic-dompurify@1.12.0:
-    resolution: {integrity: sha512-E/3IKMkFt5qWeWD6RC7caDfS0NroDfCsn6OYvUtJGAQwSteR13m9IardqFCHMJG12uR/nFcuTjULgGW2w3bw3g==}
+  /isomorphic-dompurify@2.2.0:
+    resolution: {integrity: sha512-r+pTGOcmnWm1qGdB6OzAk6zM4kfb7jVHXFliJOTlnRw5G3+LOR2mSWllE2Um1V23njAluToqOeRqp1jMsMFT0A==}
     engines: {node: '>=18'}
     dependencies:
       '@types/dompurify': 3.0.5
-      dompurify: 3.0.6
-      jsdom: 23.0.1
+      dompurify: 3.0.8
+      jsdom: 23.2.0
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -6345,8 +6339,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom@23.0.1:
-    resolution: {integrity: sha512-2i27vgvlUsGEBO9+/kJQRbtqtm+191b5zAZrU/UezVmnC2dlDAFLgDYJvAEi94T4kjsRKkezEtLQTgsNEsW2lQ==}
+  /jsdom@23.2.0:
+    resolution: {integrity: sha512-L88oL7D/8ufIES+Zjz7v0aes+oBMh2Xnh3ygWvL0OaICOomKEPKuPnIfBJekiXr+BHbbMjrWn/xqrDQuxFTeyA==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -6354,7 +6348,8 @@ packages:
       canvas:
         optional: true
     dependencies:
-      cssstyle: 3.0.0
+      '@asamuzakjp/dom-selector': 2.0.2
+      cssstyle: 4.0.1
       data-urls: 5.0.0
       decimal.js: 10.4.3
       form-data: 4.0.0
@@ -6362,7 +6357,6 @@ packages:
       http-proxy-agent: 7.0.0
       https-proxy-agent: 7.0.2
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.7
       parse5: 7.1.2
       rrweb-cssom: 0.6.0
       saxes: 6.0.0
@@ -6746,7 +6740,6 @@ packages:
 
   /mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
-    dev: true
 
   /media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -7529,10 +7522,6 @@ packages:
       - vue-tsc
       - xml2js
     dev: true
-
-  /nwsapi@2.2.7:
-    resolution: {integrity: sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==}
-    dev: false
 
   /nypm@0.3.3:
     resolution: {integrity: sha512-FHoxtTscAE723e80d2M9cJRb4YVjL82Ra+ZV+YqC6rfNZUWahi+ZhPF+krnR+bdMvibsfHCtgKXnZf5R6kmEPA==}
@@ -8754,6 +8743,11 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /require-from-string@2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
@@ -10498,40 +10492,19 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email-edge@0.8.5-28430632.51e5adc(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-giGRXo8IRAa2j6qmM13HiFtv8Fb31th5E4K3V5YGjiStTx8W+nVOc7br5hTx196C7+UELprNmd2heuWX+S2F1A==}
+  /vue-email@0.8.6(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-1U7xUdBcBn0ava2hz5gXPe7/6vL3Zts/8XBIVzhjfG9nuNYMKOvfRacLSeQ5lIfUvNhXvdv6NSQNOELLkdoMAQ==}
     hasBin: true
     peerDependencies:
       vue: ^3.3.8
     dependencies:
       '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.4.15)
       '@vue-email/tailwind': 0.0.6
-      isomorphic-dompurify: 1.12.0
+      isomorphic-dompurify: 2.2.0
       shikiji: 0.10.0-beta.9
       ufo: 1.3.2
       vue: 3.4.15(typescript@5.3.3)
-      vue-i18n: 9.8.0(vue@3.4.15)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: false
-
-  /vue-email@0.8.5(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-NE3o2H6jcZNFdQJvtYlsCWxfNDRQl2xNdBcVhpLI9K7IkLMhhrbbMmeIGdPbx4ChncQjA1z8Oe/a4+8VYzcIRw==}
-    hasBin: true
-    peerDependencies:
-      vue: ^3.3.8
-    dependencies:
-      '@vue-email/cli': 0.0.9(typescript@5.3.3)(vue@3.4.15)
-      '@vue-email/tailwind': 0.0.6
-      isomorphic-dompurify: 1.12.0
-      ufo: 1.3.2
-      vue: 3.4.15(typescript@5.3.3)
-      vue-i18n: 9.8.0(vue@3.4.15)
+      vue-i18n: 9.9.0(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -10559,14 +10532,14 @@ packages:
       - supports-color
     dev: true
 
-  /vue-i18n@9.8.0(vue@3.4.15):
-    resolution: {integrity: sha512-Izho+6PYjejsTq2mzjcRdBZ5VLRQoSuuexvR8029h5CpN03FYqiqBrShMyf2I1DKkN6kw/xmujcbvC+4QybpsQ==}
+  /vue-i18n@9.9.0(vue@3.4.15):
+    resolution: {integrity: sha512-xQ5SxszUAqK5n84N+uUyHH/PiQl9xZ24FOxyAaNonmOQgXeN+rD9z/6DStOpOxNFQn4Cgcquot05gZc+CdOujA==}
     engines: {node: '>= 16'}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@intlify/core-base': 9.8.0
-      '@intlify/shared': 9.8.0
+      '@intlify/core-base': 9.9.0
+      '@intlify/shared': 9.9.0
       '@vue/devtools-api': 6.5.1
       vue: 3.4.15(typescript@5.3.3)
     dev: false
