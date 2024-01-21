@@ -32,6 +32,7 @@ const tokens = await codeToThemedTokens('<div class="foo">bar</div>', {
       <EContainer :style="container">
         <ESection :style="box">
           <ECodeBlock style="padding: 20px;" :code="code" lang="typescript" theme="min-dark" />
+          <ECodeInline>@vue-email/nuxt</ECodeInline>
         </ESection>
       </EContainer>
     </EBody>
