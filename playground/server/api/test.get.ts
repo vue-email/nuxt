@@ -2,7 +2,7 @@ import { useCompiler } from '#vue-email'
 
 export default defineEventHandler(async () => {
   try {
-    const template = await useCompiler('github-access-token.vue', {
+    const template = await useCompiler('test.vue', {
       props: {
         username: 'Flowko',
       },

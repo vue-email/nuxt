@@ -37,10 +37,10 @@
     "build:module": "nuxt-module-build build",
     "build:client": "nuxi generate client",
     "build:play": "nuxi build playground",
+    "preview:play": "nuxi preview playground",
     "prepack": "pnpm build",
     "dev": "nuxi dev playground",
     "dev:client": "nuxi dev client",
-    "dev:build": "nuxi build playground",
     "dev:prepare": "pnpm stub && nuxt-module-build prepare && nuxi prepare playground && nuxi prepare client",
     "lint": "eslint .",
     "test": "vitest run",
@@ -50,8 +50,8 @@
   "dependencies": {
     "@nuxt/kit": "^3.8.2",
     "defu": "^6.1.3",
-    "vue-email": "^0.8.5",
-    "@vue-email/compiler": "^0.8.7",
+    "vue-email": "npm:vue-email-edge@0.8.5-28430607.be7e220",
+    "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.7-28430612.a126a88",
     "sirv": "^2.0.3"
   },
   "devDependencies": {
