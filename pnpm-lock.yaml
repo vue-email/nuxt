@@ -12,8 +12,8 @@ importers:
         specifier: ^3.10.0
         version: 3.10.0(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: npm:@vue-email/compiler-edge@0.8.8-28444002.eb23179
-        version: /@vue-email/compiler-edge@0.8.8-28444002.eb23179(typescript@5.3.3)(vue@3.4.15)
+        specifier: npm:@vue-email/compiler-edge@0.8.8-28444007.d6f0255
+        version: /@vue-email/compiler-edge@0.8.8-28444007.d6f0255(typescript@5.3.3)(vue@3.4.15)
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       vue-email:
-        specifier: npm:vue-email-edge@0.8.6-28443962.29cd605
-        version: /vue-email-edge@0.8.6-28443962.29cd605(typescript@5.3.3)(vue@3.4.15)
+        specifier: npm:vue-email-edge@0.8.6-28444006.772137
+        version: /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2952,8 +2952,8 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler-edge@0.8.8-28444002.eb23179(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-TYVcMhP18hVjr7fxUfHisAlRW5CFadUe3Sv3bKyFMjpgGMSYxNkNk6ThfiKMyi69JPlEvUYDgR/fqyMMC0AvNQ==}
+  /@vue-email/compiler-edge@0.8.8-28444007.d6f0255(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-e3815JY2TuIJPi58NHYOOHpu9uCKlMu2rh3fr5L66phG43JCI4yQWsep5VedGfHWstYpmiSHoprCW83VtEnRiw==}
     peerDependencies:
       vue: ^3.4.15
     dependencies:
@@ -2961,7 +2961,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.2.0
       vue: 3.4.15(typescript@5.3.3)
-      vue-email: /vue-email-edge@0.8.6-28443962.29cd605(typescript@5.3.3)(vue@3.4.15)
+      vue-email: /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9439,8 +9439,8 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email-edge@0.8.6-28443962.29cd605(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-ZRVvXRLaylpN++x62cnDqnZOFA2tXXHZaOq42mBESQEZMR+4hgRSeFQJw2dxY/ACOouK9NL+hQliJcYd/Q+aNA==}
+  /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-TGAWqjPoNSsdK7xAjwzcvSaKaTqDjdtnxKAD5KOBE2ZjBhCh+NvTezAtmSzFgz6VMZ8i7/Qkt+1jcB/s8NS3Pw==}
     hasBin: true
     peerDependencies:
       vue: ^3.4.15
