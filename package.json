@@ -48,23 +48,23 @@
     "release": "bumpp"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.9.3",
+    "@nuxt/kit": "^3.10.0",
     "defu": "^6.1.4",
-    "vue-email": "^0.8.6",
-    "@vue-email/compiler": "^0.8.8",
+    "vue-email": "npm:vue-email-edge@0.8.6-28443962.29cd605",
+    "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.8-28444002.eb23179",
     "sirv": "^2.0.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/module-builder": "^0.5.5",
-    "@nuxt/schema": "^3.9.3",
-    "@nuxt/test-utils": "^3.10.0",
-    "@types/node": "^20.11.5",
+    "@nuxt/schema": "^3.10.0",
+    "@nuxt/test-utils": "^3.11.0",
+    "@types/node": "^20.11.10",
     "eslint": "^8.56.0",
     "bumpp": "^9.3.0",
     "jiti": "^1.21.0",
-    "nuxt": "^3.9.3",
-    "vitest": "^1.2.1"
+    "nuxt": "^3.10.0",
+    "vitest": "^1.2.2"
   }
 }
