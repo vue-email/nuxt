@@ -12,8 +12,8 @@ importers:
         specifier: ^3.10.0
         version: 3.10.0(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: npm:@vue-email/compiler-edge@0.8.8-28444007.d6f0255
-        version: /@vue-email/compiler-edge@0.8.8-28444007.d6f0255(typescript@5.3.3)(vue@3.4.15)
+        specifier: ^0.8.9
+        version: 0.8.9(typescript@5.3.3)(vue@3.4.15)
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       vue-email:
-        specifier: npm:vue-email-edge@0.8.6-28444006.772137
-        version: /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15)
+        specifier: ^0.8.7
+        version: 0.8.7(typescript@5.3.3)(vue@3.4.15)
     devDependencies:
       '@nuxt/devtools':
         specifier: latest
@@ -2941,7 +2941,7 @@ packages:
     resolution: {integrity: sha512-F99FOPQ8++SGJ8toAqboiW78o2d9ZDMmh7B9x8OZBvHyq/cH4KZca3VCQ9JaaOX4Rrovu6R3mwdPgJhtfK+l8A==}
     hasBin: true
     dependencies:
-      '@vue-email/compiler': 0.8.8(typescript@5.3.3)(vue@3.4.15)
+      '@vue-email/compiler': 0.8.9(typescript@5.3.3)(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -2952,27 +2952,8 @@ packages:
       - vue
     dev: false
 
-  /@vue-email/compiler-edge@0.8.8-28444007.d6f0255(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-e3815JY2TuIJPi58NHYOOHpu9uCKlMu2rh3fr5L66phG43JCI4yQWsep5VedGfHWstYpmiSHoprCW83VtEnRiw==}
-    peerDependencies:
-      vue: ^3.4.15
-    dependencies:
-      import-string: 0.1.2(typescript@5.3.3)
-      kolorist: 1.8.0
-      scule: 1.2.0
-      vue: 3.4.15(typescript@5.3.3)
-      vue-email: /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: false
-
-  /@vue-email/compiler@0.8.8(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-oYYFxps8c7KJ1/pg72JfoBAhzq0PJCRx+YsUhv++t062G281vrPcMn36MfDtPPejn3cafBWU5H2P6d2HvrBY1g==}
+  /@vue-email/compiler@0.8.9(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-5sHZiK/jQ/cDgCOAlenO7LZjN5DpAnnUsA7RX5n+xgMW/HrrBO2x1l9Za20TuH09CPmpePPIVGoT8DACA08IjQ==}
     peerDependencies:
       vue: ^3.3.8
     dependencies:
@@ -2980,7 +2961,7 @@ packages:
       kolorist: 1.8.0
       scule: 1.2.0
       vue: 3.4.15(typescript@5.3.3)
-      vue-email: 0.8.6(typescript@5.3.3)(vue@3.4.15)
+      vue-email: 0.8.7(typescript@5.3.3)(vue@3.4.15)
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -8096,10 +8077,6 @@ packages:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
     dev: true
 
-  /shikiji-core@0.10.0-beta.9:
-    resolution: {integrity: sha512-7dgwTyN9PeKyc4KJeyKo/qW8gi8XbR//c1CO+0B5GaeozWexNTpEL/tSohyIKkj0Z+7spfm2REmAaS39NlC4Lw==}
-    dev: false
-
   /shikiji-core@0.10.2:
     resolution: {integrity: sha512-9Of8HMlF96usXJHmCL3Gd0Fcf0EcyJUF9m8EoAKKd98mHXi0La2AZl1h6PegSFGtiYcBDK/fLuKbDa1l16r1fA==}
     dev: false
@@ -8107,12 +8084,6 @@ packages:
   /shikiji-core@0.9.19:
     resolution: {integrity: sha512-AFJu/vcNT21t0e6YrfadZ+9q86gvPum6iywRyt1OtIPjPFe25RQnYJyxHQPMLKCCWA992TPxmEmbNcOZCAJclw==}
     dev: true
-
-  /shikiji@0.10.0-beta.9:
-    resolution: {integrity: sha512-I+sv642n9M7/FK/dVcXp9vMv7v5Wa8gU2UuKwkIWKQFvyo+qKB8eV1zNNtRYas+jC7BLwdAaflc5BFUozAonFQ==}
-    dependencies:
-      shikiji-core: 0.10.0-beta.9
-    dev: false
 
   /shikiji@0.10.2:
     resolution: {integrity: sha512-wtZg3T0vtYV2PnqusWQs3mDaJBdCPWxFDrBM/SE5LfrX92gjUvfEMlc+vJnoKY6Z/S44OWaCRzNIsdBRWcTAiw==}
@@ -9439,8 +9410,8 @@ packages:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
     dev: true
 
-  /vue-email-edge@0.8.6-28444006.772137(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-TGAWqjPoNSsdK7xAjwzcvSaKaTqDjdtnxKAD5KOBE2ZjBhCh+NvTezAtmSzFgz6VMZ8i7/Qkt+1jcB/s8NS3Pw==}
+  /vue-email@0.8.7(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-VxJHqXpVnFIezZ4Oj+vhtjBNBQZtqbKud+WicLQLSIqdtcV9hnM6f3+BQIXW2AijglVCTtUel/Z2Tn1m7/teRA==}
     hasBin: true
     peerDependencies:
       vue: ^3.4.15
@@ -9449,28 +9420,6 @@ packages:
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 2.3.0
       shikiji: 0.10.2
-      ufo: 1.3.2
-      vue: 3.4.15(typescript@5.3.3)
-      vue-i18n: 9.9.0(vue@3.4.15)
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - ts-node
-      - typescript
-      - utf-8-validate
-    dev: false
-
-  /vue-email@0.8.6(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-1U7xUdBcBn0ava2hz5gXPe7/6vL3Zts/8XBIVzhjfG9nuNYMKOvfRacLSeQ5lIfUvNhXvdv6NSQNOELLkdoMAQ==}
-    hasBin: true
-    peerDependencies:
-      vue: ^3.3.8
-    dependencies:
-      '@vue-email/cli': 0.0.10(typescript@5.3.3)(vue@3.4.15)
-      '@vue-email/tailwind': 0.0.6
-      isomorphic-dompurify: 2.3.0
-      shikiji: 0.10.0-beta.9
       ufo: 1.3.2
       vue: 3.4.15(typescript@5.3.3)
       vue-i18n: 9.9.0(vue@3.4.15)
