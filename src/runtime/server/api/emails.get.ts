@@ -32,7 +32,8 @@ export default defineEventHandler(async () => {
     }
 
     return emails
-  } catch (error) {
+  }
+  catch (error) {
     throw createError({
       statusCode: 500,
       statusMessage: 'Internal Server Error',

@@ -34,7 +34,9 @@ const previewText = `Join ${props.invitedByUsername} on Vercel`
           <EHeading class="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
             Join <strong>{{ teamName }}</strong> on <strong>Vercel</strong>
           </EHeading>
-          <EText class="text-black text-[14px] leading-[24px]"> Hello {{ username }}, </EText>
+          <EText class="text-black text-[14px] leading-[24px]">
+            Hello {{ username }},
+          </EText>
           <EText class="text-black text-[14px] leading-[24px]">
             <strong>bukinoshita</strong> (
             <ELink :href="`mailto:${invitedByEmail}`" class="text-blue-600 no-underline">
@@ -56,7 +58,9 @@ const previewText = `Join ${props.invitedByUsername} on Vercel`
             </ERow>
           </ESection>
           <ESection class="text-center mt-[32px] mb-[32px]">
-            <EButton px="20" py="12" class="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center" :href="inviteLink"> Join the team </EButton>
+            <EButton px="20" py="12" class="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center" :href="inviteLink">
+              Join the team
+            </EButton>
           </ESection>
           <EText class="text-black text-[14px] leading-[24px]">
             or copy and paste this URL into your browser:
@@ -68,8 +72,7 @@ const previewText = `Join ${props.invitedByUsername} on Vercel`
           <EText class="text-[#666666] text-[12px] leading-[24px]">
             This invitation was intended for
             <span class="text-black">{{ username }} </span>.This invite was sent from <span class="text-black">{{ inviteFromIp }}</span> located in
-            <span class="text-black">{{ inviteFromLocation }}</span
-            >. If you were not expecting this invitation, you can ignore this email. If you are concerned about your account's safety, please reply to this email to get in touch
+            <span class="text-black">{{ inviteFromLocation }}</span>. If you were not expecting this invitation, you can ignore this email. If you are concerned about your account's safety, please reply to this email to get in touch
             with us.
           </EText>
         </EContainer>

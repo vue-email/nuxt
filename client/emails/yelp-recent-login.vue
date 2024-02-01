@@ -91,7 +91,9 @@ const containerImageFooter = {
             }"
           >
             <EColumn>
-              <EHeading style="font-size: 32; font-weight: bold; text-align: center"> Hi {{ userFirstName }}, </EHeading>
+              <EHeading style="font-size: 32; font-weight: bold; text-align: center">
+                Hi {{ userFirstName }},
+              </EHeading>
               <EHeading
                 as="h2"
                 :style="{
@@ -125,13 +127,19 @@ const containerImageFooter = {
                 *Approximate geographic location based on IP address: {loginIp}
               </EText>
 
-              <EText :style="paragraph"> If this was you, there's nothing else you need to do. </EText>
-              <EText :style="{ ...paragraph, marginTop: '-5px' }"> If this wasn't you or if you have additional questions, please see our support page. </EText>
+              <EText :style="paragraph">
+                If this was you, there's nothing else you need to do.
+              </EText>
+              <EText :style="{ ...paragraph, marginTop: '-5px' }">
+                If this wasn't you or if you have additional questions, please see our support page.
+              </EText>
             </EColumn>
           </ERow>
           <ERow :style="{ ...boxInfos, paddingTop: '0' }">
             <EColumn :style="containerButton" col-span="{2}">
-              <EButton href="#" :style="button"> Learn More </EButton>
+              <EButton href="#" :style="button">
+                Learn More
+              </EButton>
             </EColumn>
           </ERow>
         </ESection>

@@ -50,7 +50,9 @@ const items = [
     <div class="max-w-3xl px-4 md:px-8 py-10 md:py-20">
       <div class="text-center">
         <UIcon name="i-twemoji-incoming-envelope" class="w-20 h-20" />
-        <h2 class="text-xl text-gray-800 dark:text-gray-100 font-medium">Welcome to the Vue Email Dev Tools!</h2>
+        <h2 class="text-xl text-gray-800 dark:text-gray-100 font-medium">
+          Welcome to the Vue Email Dev Tools!
+        </h2>
         <p class="mt-2 mb-4 text-sm text-gray-800 dark:text-gray-100 font-normal">
           To start developing your next email template, you can create a
           <UKbd>.vue</UKbd> file under the <UKbd>emails</UKbd> folder.
@@ -69,7 +71,9 @@ const items = [
                 <span>{{ item.title }}</span>
                 <span aria-hidden="true"> &rarr;</span>
               </h3>
-              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{{ item.description }}</p>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                {{ item.description }}
+              </p>
             </div>
           </NuxtLink>
         </li>

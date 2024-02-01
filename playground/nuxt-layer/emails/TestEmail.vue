@@ -1,31 +1,31 @@
 <script setup lang="ts">
 interface Props {
-  invitedByUsername?: string;
-  teamName?: string;
-  username?: string;
-  invitedByEmail?: string;
-  inviteLink?: string;
-  inviteFromIp?: string;
-  inviteFromLocation?: string;
+  invitedByUsername?: string
+  teamName?: string
+  username?: string
+  invitedByEmail?: string
+  inviteLink?: string
+  inviteFromIp?: string
+  inviteFromLocation?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  teamName: "My project",
-  username: "John Doe",
-  invitedByEmail: "anpch@example.com",
-  inviteLink: "https://vercel.com/teams/invite/foo",
-  inviteFromIp: "172.0.0.1",
-  inviteFromLocation: "San Francisco, CA",
-});
+  teamName: 'My project',
+  username: 'John Doe',
+  invitedByEmail: 'anpch@example.com',
+  inviteLink: 'https://vercel.com/teams/invite/foo',
+  inviteFromIp: '172.0.0.1',
+  inviteFromLocation: 'San Francisco, CA',
+})
 
-const previewText = `Join ${props.invitedByUsername} on Vercel`;
+const previewText = `Join ${props.invitedByUsername} on Vercel`
 
 const code = `import { codeToThemedTokens } from 'shiki'
 const tokens = await codeToThemedTokens('<div class="foo">bar</div>', {
   lang: 'html',
   theme: 'min-dark'
 })
-`;
+`
 </script>
 
 <template>

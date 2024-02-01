@@ -59,21 +59,24 @@ const items = computed(() => {
         code: template.value.txt,
       },
     ]
-  } else if (editorCode.value.id === 'html') {
+  }
+  else if (editorCode.value.id === 'html') {
     arr.push({
       key: 'html',
       label: 'HTML',
       icon: 'i-ph-file-html-duotone',
       code: template.value.html,
     })
-  } else if (editorCode.value.id === 'txt') {
+  }
+  else if (editorCode.value.id === 'txt') {
     arr.push({
       key: 'txt',
       label: 'Plain Text',
       icon: 'i-ph-text-t-duotone',
       code: template.value.txt,
     })
-  } else if (editorCode.value.id === 'vue') {
+  }
+  else if (editorCode.value.id === 'vue') {
     arr.push({
       key: 'vue',
       label: 'Vue',
@@ -89,9 +92,12 @@ const tab = ref(0)
 </script>
 
 <template>
-  <UTabs v-model="tab" :items="items" :ui="{
-    wrapper: 'relative space-y-0'
-  }">
+  {{ email.props }}
+  <UTabs
+    v-model="tab" :items="items" :ui="{
+      wrapper: 'relative space-y-0',
+    }"
+  >
     <template #default="{ item, selected }">
       <div class="flex items-center gap-2 relative truncate">
         <UIcon :name="item.icon" class="w-7 h-7 flex-shrink-0" />

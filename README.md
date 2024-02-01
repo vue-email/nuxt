@@ -1,6 +1,5 @@
 [![vue-email](https://github.com/vue-email/vue-email/blob/main/public/repo-banner.png?raw=true)](https://vuemail.net)
 
-
 <div align="center">
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -89,7 +88,6 @@ npm run release
 ## License
 
 [MIT](./LICENSE) License © 2023-PRESENT [Vue Email](https://vuemail.net/)
-
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@vue-email/nuxt/latest.svg?style=flat&colorA=18181B&colorB=28CF8D

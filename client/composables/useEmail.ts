@@ -1,6 +1,6 @@
 import pretty from 'pretty'
-import type { Email } from '@/types/email'
 import type { Result } from '@vue-email/compiler'
+import type { Email } from '@/types/email'
 
 export function useEmail() {
   const emails = useState<Email[]>('emails')
@@ -25,37 +25,39 @@ export function useEmail() {
       return
     }
 
-    if (data && data.value) {
+    if (data && data.value)
       emails.value = data.value
-    }
   }
 
   const renderEmail = async () => {
-    if (!email.value) return null
+    if (!email.value)
+      return null
 
     const { data } = await useFetch<Result>(`/api/render/${email.value.filename}`, {
       baseURL: host.value,
     })
 
-    if (data.value)
+    if (data.value) {
       return {
         vue: email.value.content,
         html: pretty(data.value.html),
         txt: data.value.text,
       }
+    }
 
     return null
   }
 
   const getEmail = async (filename: string) => {
     if (filename && emails.value && emails.value.length) {
-      const found = emails.value.find((email) => email.filename === filename)
+      const found = emails.value.find(email => email.filename === filename)
 
       if (found) {
         email.value = found
 
         await renderEmail().then((value) => {
-          if (value) template.value = value
+          if (value)
+            template.value = value
         })
       }
     }
@@ -63,7 +65,8 @@ export function useEmail() {
 
   const sendTestEmail = async (to: string, subject: string, markup: string) => {
     try {
-      if (!email || !subject) return
+      if (!email || !subject)
+        return
 
       sending.value = true
 
@@ -96,14 +99,16 @@ export function useEmail() {
           icon: 'i-ph-bell-bold',
         })
       }
-    } catch (error) {
+    }
+    catch (error) {
       useToast().add({
         title: 'Error',
         description: 'Something went wrong. Please try again.',
         color: 'red',
         icon: 'i-ph-bell-bold',
       })
-    } finally {
+    }
+    finally {
       sending.value = false
     }
   }

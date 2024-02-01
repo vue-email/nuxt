@@ -1,19 +1,21 @@
-import { useCompiler } from "#vue-email";
+import { useCompiler } from '#vue-email'
 
 export default defineEventHandler(async () => {
   try {
-    const template = await useCompiler("TestEmail.vue", {
+    const template = await useCompiler('TestEmail.vue', {
       props: {
-        username: "Flowko",
+        username: 'Flowko',
       },
     }).catch((error) => {
-      console.error(error);
-    });
+      console.error(error)
+    })
 
-    if (!template) return null;
+    if (!template)
+      return null
 
-    return template.html;
-  } catch (error) {
-    console.error(error);
+    return template.html
   }
-});
+  catch (error) {
+    console.error(error)
+  }
+})

@@ -33,14 +33,16 @@ const emailSubject = ref('Testing Vue Email')
 function handleView(view: ActiveView) {
   activeView.value = view
   router.push(`${route.path}?view=${view}`)
-  if (iframeUpdate.value >= 100) iframeUpdate.value = 0
+  if (iframeUpdate.value >= 100)
+    iframeUpdate.value = 0
   iframeUpdate.value++
 }
 
 async function updateIframe() {
   refresh.value = !refresh.value
 
-  if (iframeUpdate.value >= 100) iframeUpdate.value = 0
+  if (iframeUpdate.value >= 100)
+    iframeUpdate.value = 0
   iframeUpdate.value++
 }
 
@@ -50,10 +52,12 @@ function setlang(lang: ActiveLang) {
 }
 
 watchEffect(() => {
-  if (query.view === 'source' || query.view === 'desktop' || query.view === 'mobile') activeView.value = query.view
+  if (query.view === 'source' || query.view === 'desktop' || query.view === 'mobile')
+    activeView.value = query.view
 
   if (query.lang) {
-    if (['html'].includes(query.lang)) activeLang.value = query.lang
+    if (['html'].includes(query.lang))
+      activeLang.value = query.lang
   }
 })
 </script>
@@ -99,9 +103,7 @@ watchEffect(() => {
           <UInput id="to" v-model="emailSubject" type="text" color="gray" variant="outline" placeholder="My Email" />
 
           <div class="flex items-center justify-between mt-3">
-            <span class="inline-block text-xs text-gray-100 font-normal"
-              >Powered by <a class="hover:text-gray-100 transition ease-in-out duration-300" href="https://resend.com" target="_blank" rel="noreferrer">Resend</a></span
-            >
+            <span class="inline-block text-xs text-gray-100 font-normal">Powered by <a class="hover:text-gray-100 transition ease-in-out duration-300" href="https://resend.com" target="_blank" rel="noreferrer">Resend</a></span>
             <UButton
               color="primary"
               :disabled="!sending && (!emailTo || !emailSubject) && (emailSubject.trim().length === 0 || emailTo.trim().length === 0)"

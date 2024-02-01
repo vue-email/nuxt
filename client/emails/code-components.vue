@@ -15,7 +15,6 @@ const box = {
   padding: '0 48px',
 }
 
-
 const code = `import { codeToThemedTokens } from 'shikiji'
 
 const tokens = await codeToThemedTokens('<div class="foo">bar</div>', {

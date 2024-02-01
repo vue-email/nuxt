@@ -92,27 +92,35 @@ const link = {
             </ERow>
           </ESection>
           <ESection :style="content">
-            <EText :style="paragraph"> Hi {{ username }}, </EText>
+            <EText :style="paragraph">
+              Hi {{ username }},
+            </EText>
             <EText :style="paragraph">
               You updated the password for your Twitch account on
               {{ formattedDate }}. If this was you, then no further action is required.
             </EText>
             <EText :style="paragraph">
               However if you did NOT perform this password change, please
-              <ELink href="#" :style="link"> reset your account password </ELink>
+              <ELink href="#" :style="link">
+                reset your account password
+              </ELink>
               immediately.
             </EText>
             <EText :style="paragraph">
               Remember to use a password that is both strong and unique to your Twitch account. To learn more about how to create a strong and unique password,
-              <ELink href="#" :style="link"> click here. </ELink>
+              <ELink href="#" :style="link">
+                click here.
+              </ELink>
             </EText>
             <EText :style="paragraph">
               Still have questions? Please contact
-              <ELink href="#" :style="link"> Twitch Support </ELink>
+              <ELink href="#" :style="link">
+                Twitch Support
+              </ELink>
             </EText>
             <EText :style="paragraph">
               Thanks,
-              <br />
+              <br>
               Twitch Support Team
             </EText>
           </ESection>
@@ -128,7 +136,7 @@ const link = {
             </EColumn>
           </ERow>
           <EText style="text-align: center; color: #706a7b">
-            © 2023 Twitch, All Rights Reserved <br />
+            © 2023 Twitch, All Rights Reserved <br>
             350 Bush Street, 2nd Floor, San Francisco, CA, 94104 - USA
           </EText>
         </ESection>

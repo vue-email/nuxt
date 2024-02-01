@@ -34,12 +34,8 @@ defineShortcuts({
       <UInput id="to" v-model="emailSubject" type="text" color="gray" variant="outline" placeholder="My Email" />
 
       <div class="flex items-center justify-between mt-3">
-        <span class="inline-block text-xs text-gray-100 font-normal"
-          >Powered by
-          <a class="hover:text-gray-100 transition ease-in-out underline underline-offset-2 duration-300" href="https://resend.com" target="_blank" rel="noreferrer"
-            >Resend</a
-          ></span
-        >
+        <span class="inline-block text-xs text-gray-100 font-normal">Powered by
+          <a class="hover:text-gray-100 transition ease-in-out underline underline-offset-2 duration-300" href="https://resend.com" target="_blank" rel="noreferrer">Resend</a></span>
         <UButton
           color="primary"
           :disabled="!sending && (!emailTo || !emailSubject) && (emailSubject.trim().length === 0 || emailTo.trim().length === 0)"

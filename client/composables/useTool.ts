@@ -58,13 +58,11 @@ export function useTool(params?: UseToolParams) {
   const editorCode = useStorage<editorCodes>('editorCodes', editorCodes[0])
 
   watch(reloadTemplate, async () => {
-    if (typeof params?.onReload == 'undefined' && typeof params?.onReload !== 'function' && !reloadTemplate.value) {
+    if (typeof params?.onReload == 'undefined' && typeof params?.onReload !== 'function' && !reloadTemplate.value)
       return
-    }
 
-    if (typeof params?.onReload === 'function') {
+    if (typeof params?.onReload === 'function')
       await params.onReload()
-    }
 
     setTimeout(() => {
       reloadTemplate.value = false

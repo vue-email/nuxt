@@ -13,7 +13,8 @@ getHighlighter({
 })
 
 export function highlight(code: string, lang: string) {
-  if (!shiki.value) return code
+  if (!shiki.value)
+    return code
   return shiki.value.codeToHtml(code, {
     lang,
     theme: 'vitesse-dark',

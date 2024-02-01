@@ -1,3 +1,5 @@
+import type { PropertyMeta } from 'vue-component-meta'
+
 export interface Email {
   label: string
   filename: string
@@ -6,6 +8,7 @@ export interface Email {
   size: number
   created: Date
   modified: Date
+  props: PropertyMeta[]
 }
 
 export interface Directory {

@@ -53,8 +53,10 @@ function onSelect(option: Email) {
     >
       <template #empty-state>
         <div class="flex flex-col text-center items-center justify-center flex-1 px-6 py-14 sm:px-14">
-          <span class="i-heroicons-magnifying-glass-20-solid w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4" aria-hidden="true"></span>
-          <p class="text-sm text-center text-gray-900 dark:text-white">We couldn't find any email template.</p>
+          <span class="i-heroicons-magnifying-glass-20-solid w-6 h-6 mx-auto text-gray-400 dark:text-gray-500 mb-4" aria-hidden="true" />
+          <p class="text-sm text-center text-gray-900 dark:text-white">
+            We couldn't find any email template.
+          </p>
 
           <p class="mt-2 mb-4 text-sm text-gray-300 font-normal">
             You can create a

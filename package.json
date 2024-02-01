@@ -1,9 +1,11 @@
 {
   "name": "@vue-email/nuxt",
+  "type": "module",
   "version": "0.8.12",
   "packageManager": "pnpm@8.11.0",
   "description": "Nuxt package for vue-email",
   "author": "David Arenas <davejs136@gmail.com> (https://github.com/Dave136/)",
+  "license": "MIT",
   "homepage": "https://vuemail.net/",
   "maintainers": [
     {
@@ -17,8 +19,6 @@
       "url": "https://github.com/Flowko"
     }
   ],
-  "license": "MIT",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
@@ -43,26 +43,28 @@
     "dev:client": "nuxi dev client",
     "dev:prepare": "pnpm stub && nuxt-module-build prepare && nuxi prepare playground && nuxi prepare client",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "release": "bumpp"
   },
   "dependencies": {
     "@nuxt/kit": "^3.10.0",
-    "defu": "^6.1.4",
-    "vue-email": "npm:vue-email-edge@0.8.7-28446842.1f6e4a0",
     "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.9-28446863.0aab8eb",
-    "sirv": "^2.0.4"
+    "defu": "^6.1.4",
+    "sirv": "^2.0.4",
+    "vue-component-meta": "^1.8.27",
+    "vue-email": "npm:vue-email-edge@0.8.7-28446842.1f6e4a0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.6.3",
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "^0.2.0",
     "@nuxt/module-builder": "^0.5.5",
     "@nuxt/schema": "^3.10.0",
     "@nuxt/test-utils": "^3.11.0",
     "@types/node": "^20.11.10",
-    "eslint": "^8.56.0",
     "bumpp": "^9.3.0",
+    "eslint": "^8.56.0",
     "jiti": "^1.21.0",
     "nuxt": "^3.10.0",
     "vitest": "^1.2.2"
