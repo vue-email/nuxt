@@ -10,6 +10,7 @@
     "analyze": "nuxt analyze"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.11.2",
     "nuxt": "latest"
   }
 }
