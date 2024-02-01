@@ -92,7 +92,6 @@ const tab = ref(0)
 </script>
 
 <template>
-  {{ email.props }}
   <UTabs
     v-model="tab" :items="items" :ui="{
       wrapper: 'relative space-y-0',
