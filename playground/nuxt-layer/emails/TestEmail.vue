@@ -1,156 +1,144 @@
 <script setup lang="ts">
-const main = {
-  backgroundColor: '#f6f9fc',
-  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+interface Props {
+  invitedByUsername?: string;
+  teamName?: string;
+  username?: string;
+  invitedByEmail?: string;
+  inviteLink?: string;
+  inviteFromIp?: string;
+  inviteFromLocation?: string;
 }
 
-const container = {
-  backgroundColor: '#ffffff',
-  margin: '0 auto',
-  padding: '20px 0 48px',
-  marginBottom: '64px',
-}
+const props = withDefaults(defineProps<Props>(), {
+  teamName: "My project",
+  username: "John Doe",
+  invitedByEmail: "anpch@example.com",
+  inviteLink: "https://vercel.com/teams/invite/foo",
+  inviteFromIp: "172.0.0.1",
+  inviteFromLocation: "San Francisco, CA",
+});
 
-const box = {
-  padding: '0 48px',
-}
+const previewText = `Join ${props.invitedByUsername} on Vercel`;
 
-const hr = {
-  borderColor: '#e6ebf1',
-  margin: '20px 0',
-}
-
-const paragraph = {
-  color: '#525f7f',
-
-  fontSize: '16px',
-  lineHeight: '24px',
-  textAlign: 'left',
-}
-
-const anchor = {
-  color: '#556cd6',
-}
-
-const button = {
-  backgroundColor: '#656ee8',
-  borderRadius: '5px',
-  color: '#fff',
-  fontSize: '16px',
-  fontWeight: 'bold',
-  textDecoration: 'none',
-  textAlign: 'center',
-  display: 'block',
-  width: '100%',
-}
-
-const footer = {
-  color: '#8898aa',
-  fontSize: '12px',
-  lineHeight: '16px',
-}
-
-const code = `import { codeToThemedTokens } from 'shikiji'
-
+const code = `import { codeToThemedTokens } from 'shiki'
 const tokens = await codeToThemedTokens('<div class="foo">bar</div>', {
   lang: 'html',
   theme: 'min-dark'
 })
-`
+`;
 </script>
 
 <template>
-  <EHtml>
-    <EHead />
-    <EPreview>You're now ready to make live transactions with Stripe!</EPreview>
-    <EBody :style="main">
-      <EContainer :style="container">
-        <ESection :style="box">
-          <EImg
-            src="/static/stripe-logo.png"
-            width="49"
-            height="21"
-            alt="Stripe"
-          />
-          <EHr :style="hr" />
-          <EText :style="paragraph">
-            Thanks for submitting your account information. You're now ready to make live transactions with Stripe!
-          </EText>
-          <EText :style="paragraph">
-            You can view your payments and a variety of other information about your account right from your dashboard.
-          </EText>
-          <EButton
-            px="10"
-            py="10"
-            :style="button"
-            href="https://dashboard.stripe.com/login"
+  <ETailwind>
+    <EHtml>
+      <EHead>
+        <EStyle>
+          .pager {display: none;} @media only screen and (max-width: 480px) {
+          .pager {display: block;} }
+        </EStyle>
+      </EHead>
+      <EPreview>{{ previewText }}</EPreview>
+      <EBody class="bg-primary my-auto mx-auto font-sans">
+        <EContainer
+          class="border border-solid border-[#eaeaea] p-[20px] md:p-20 rounded my-[40px] mx-auto max-w-[465px]"
+        >
+          <ESection class="mt-[32px] pager">
+            <EImg
+              src="/static/vercel-logo.png"
+              width="40"
+              height="37"
+              alt="Vercel"
+              class="my-0 mx-auto"
+            />
+          </ESection>
+          <EHeading
+            class="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0"
           >
-            View your Stripe Dashboard
-          </EButton>
-          <EHr :style="hr" />
-          <EText :style="paragraph">
-            If you haven't finished your integration, you might find our
+            Join <strong>{{ teamName }}</strong> on <strong>Vercel</strong>
+          </EHeading>
+          <EText class="text-black text-[14px] leading-[24px]">
+            Hello {{ username }},
+          </EText>
+          <EText class="text-black text-[14px] leading-[24px]">
+            {{ $vueEmail.baseUrl }}
+          </EText>
+          <EText class="text-black text-[14px] leading-[24px]">
+            <strong>bukinoshita</strong> (
             <ELink
-              :style="anchor"
-              href="https://stripe.com/docs"
+              :href="`mailto:${invitedByEmail}`"
+              class="text-blue-600 no-underline"
             >
-              docs
+              {{ invitedByEmail }}
             </ELink>
-            handy.
+            ) has invited you to the <strong>{{ teamName }}</strong> team on
+            <strong>Vercel</strong>.
           </EText>
           <ECodeBlock
-            style="padding: 20px;"
+            class="p-5"
             :code="code"
             lang="typescript"
             theme="min-dark"
           />
-          <EText :style="paragraph">
-            Once you're ready to start accepting payments, you'll just need to use your live
-            <ELink
-              :style="anchor"
-              href="https://dashboard.stripe.com/login?redirect=%2Fapikeys"
+          <ESection>
+            <ERow>
+              <EColumn align="right">
+                <EImg
+                  class="rounded-full"
+                  src="/static/vercel-user.png"
+                  width="64"
+                  height="64"
+                />
+              </EColumn>
+              <EColumn align="center">
+                <EImg
+                  src="/static/vercel-arrow.png"
+                  width="12"
+                  height="9"
+                  alt="invited you to"
+                />
+              </EColumn>
+              <EColumn align="left">
+                <EImg
+                  class="rounded-full"
+                  src="/static/vercel-team.png"
+                  width="64"
+                  height="64"
+                />
+              </EColumn>
+            </ERow>
+          </ESection>
+          <ESection class="text-center mt-[32px] mb-[32px]">
+            <EButton
+              px="20"
+              py="12"
+              class="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center"
+              :href="inviteLink"
             >
-              API keys
-            </ELink>
-            instead of your test API keys. Your account can simultaneously be used for both test and live requests, so you can continue testing while accepting live payments. Check
-            out our
+              Join the team
+            </EButton>
+          </ESection>
+          <EText class="text-black text-[14px] leading-[24px]">
+            or copy and paste this URL into your browser:
             <ELink
-              :style="anchor"
-              href="https://stripe.com/docs/dashboard"
+              :href="inviteLink"
+              class="text-blue-600 no-underline"
             >
-              tutorial about account basics
+              {{ inviteLink }}
             </ELink>
-            .
           </EText>
-          <EText :style="paragraph">
-            Finally, we've put together a
-            <ELink
-              :style="anchor"
-              href="https://stripe.com/docs/checklist/website"
-            >
-              quick checklist
-            </ELink>
-            to ensure your website conforms to card network standards.
+          <EHr
+            class="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full"
+          />
+          <EText class="text-[#666666] text-[12px] leading-[24px]">
+            This invitation was intended for
+            <span class="text-black">{{ username }} </span>.This invite was sent
+            from <span class="text-black">{{ inviteFromIp }}</span> located in
+            <span class="text-black">{{ inviteFromLocation }}</span>. If you were not expecting this invitation, you can ignore this
+            email. If you are concerned about your account's safety, please
+            reply to this email to get in touch with us.
           </EText>
-          <EText :style="paragraph">
-            We'll be here to help you with any step along the way. You can find answers to most questions and get in touch with us on our
-            <ELink
-              :style="anchor"
-              href="https://support.stripe.com/"
-            >
-              support site
-            </ELink>
-            .
-          </EText>
-          <EText :style="paragraph">
-            — The Stripe team
-          </EText>
-          <EHr :style="hr" />
-          <EText :style="footer">
-            Stripe, 354 Oyster Point Blvd, South San Francisco, CA 94080
-          </EText>
-        </ESection>
-      </EContainer>
-    </EBody>
-  </EHtml>
+        </EContainer>
+      </EBody>
+    </EHtml>
+  </ETailwind>
 </template>

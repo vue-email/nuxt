@@ -8,10 +8,11 @@ import {
   addTemplate,
   createResolver,
   defineNuxtModule,
+  hasNuxtModule,
 } from "@nuxt/kit";
 import { defu } from "defu";
 import sirv from "sirv";
-import type { I18n } from "vue-email";
+import type { I18n, VueEmailPluginOptions } from "vue-email";
 
 const components = [
   "EBody",
@@ -44,6 +45,8 @@ export interface ModuleOptions {
   i18n?: I18n;
   playground?: boolean;
   autoImport?: boolean;
+  useNuxtTailwind?: boolean;
+  tailwind?: VueEmailPluginOptions["tailwind"];
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -63,6 +66,8 @@ export default defineNuxtModule<ModuleOptions>({
       baseUrl: null,
       playground: isDev,
       autoImport: false,
+      useNuxtTailwind: true,
+      tailwind: undefined,
     };
   },
   async setup(options, nuxt) {
@@ -83,6 +88,17 @@ export default defineNuxtModule<ModuleOptions>({
       if (!pathFound) continue;
       tempaltesDir = templatePath;
       break;
+    }
+
+    if (hasNuxtModule("@nuxtjs/tailwindcss") && options.useNuxtTailwind) {
+      // @ts-ignore
+      nuxt.hook("tailwindcss:resolvedConfig", function (resolvedConfig) {
+        options.tailwind = resolvedConfig;
+        nuxt.options.runtimeConfig.public.vueEmail = defu(
+          nuxt.options.runtimeConfig.public.vueEmail,
+          options
+        );
+      });
     }
 
     nuxt.options.nitro.alias = nuxt.options.nitro.alias || {};
