@@ -12,8 +12,8 @@ importers:
         specifier: ^3.10.0
         version: 3.10.0(rollup@3.29.4)
       '@vue-email/compiler':
-        specifier: ^0.8.9
-        version: 0.8.9(typescript@5.3.3)(vue@3.4.15)
+        specifier: npm:@vue-email/compiler-edge@0.8.9-28446419.685bf84
+        version: /@vue-email/compiler-edge@0.8.9-28446419.685bf84(typescript@5.3.3)(vue@3.4.15)
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -2937,8 +2937,8 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
-  /@vue-email/cli@0.0.10(typescript@5.3.3)(vue@3.4.15):
-    resolution: {integrity: sha512-F99FOPQ8++SGJ8toAqboiW78o2d9ZDMmh7B9x8OZBvHyq/cH4KZca3VCQ9JaaOX4Rrovu6R3mwdPgJhtfK+l8A==}
+  /@vue-email/cli@0.0.11(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-nPOiCwRYc0Z3BIsTJ1rnFNcQaJQ2iE1QB/GaHVMR0fxM72VB0qcQ/LsrMDgvewAgY1ZJkpGGVrwwIR7T6PEU/w==}
     hasBin: true
     dependencies:
       '@vue-email/compiler': 0.8.9(typescript@5.3.3)(vue@3.4.15)
@@ -2950,6 +2950,25 @@ packages:
       - typescript
       - utf-8-validate
       - vue
+    dev: false
+
+  /@vue-email/compiler-edge@0.8.9-28446419.685bf84(typescript@5.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-lGrKaZ40iEFvkYEt9wQHxbDu3NRVzbIpwMTnXd3duerAXqTSXkoXP8o+Tt1a3czW4qfqLWznY/K9uvFXUyQtkg==}
+    peerDependencies:
+      vue: ^3.3.8
+    dependencies:
+      import-string: 0.1.2(typescript@5.3.3)
+      kolorist: 1.8.0
+      scule: 1.2.0
+      vue: 3.4.15(typescript@5.3.3)
+      vue-email: 0.8.7(typescript@5.3.3)(vue@3.4.15)
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - ts-node
+      - typescript
+      - utf-8-validate
     dev: false
 
   /@vue-email/compiler@0.8.9(typescript@5.3.3)(vue@3.4.15):
@@ -9416,7 +9435,7 @@ packages:
     peerDependencies:
       vue: ^3.4.15
     dependencies:
-      '@vue-email/cli': 0.0.10(typescript@5.3.3)(vue@3.4.15)
+      '@vue-email/cli': 0.0.11(typescript@5.3.3)(vue@3.4.15)
       '@vue-email/tailwind': 0.0.6
       isomorphic-dompurify: 2.3.0
       shikiji: 0.10.2
