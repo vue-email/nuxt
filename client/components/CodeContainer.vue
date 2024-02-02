@@ -6,7 +6,7 @@ defineEmits(['setlang'])
 
 const toast = useToast()
 const { editorCode } = useTool()
-const { template, email } = useEmail()
+const { template, email, props, renderEmail } = useEmail()
 
 function handleDownload(lang: 'html' | 'txt' | 'vue') {
   const content = template.value[lang]
@@ -58,6 +58,11 @@ const items = computed(() => {
         icon: 'i-ph-text-t-duotone',
         code: template.value.txt,
       },
+      {
+        key: 'props',
+        label: 'Props',
+        icon: 'i-ph-code-duotone',
+      },
     ]
   }
   else if (editorCode.value.id === 'html') {
@@ -102,7 +107,7 @@ const tab = ref(0)
         <UIcon :name="item.icon" class="w-7 h-7 flex-shrink-0" />
 
         <span class="truncate">{{ item.label }}</span>
-        <template v-if="selected">
+        <template v-if="selected && item.code">
           <UTooltip text="Copy to clipboard">
             <UButton class="ml-6" icon="i-ph-copy-duotone" size="xs" square color="gray" variant="solid" @click="handleClipboard(item.key)" />
           </UTooltip>
@@ -116,7 +121,18 @@ const tab = ref(0)
     </template>
 
     <template #item="{ item }">
-      <div class="w-full h-full" v-html="highlight(item.code, item.key)" />
+      <div v-if="item.code" class="w-full h-full" v-html="highlight(item.code, item.key)" />
+      <div v-else-if="item.key === 'props'" class="w-full h-full">
+        <UContainer class="py-5 flex flex-col gap-y-4">
+          <template v-for="(prop, idx) in props" :key="idx">
+            <UFormGroup v-if="prop.type === 'string'" :label="prop.label" :description="prop.description">
+              <UInput v-model="prop.value" type="text" />
+            </UFormGroup>
+
+            <UButton label="Update" @click="renderEmail()" />
+          </template>
+        </UContainer>
+      </div>
     </template>
   </UTabs>
 </template>

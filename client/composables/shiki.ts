@@ -1,5 +1,5 @@
-import type { Highlighter } from 'shikiji'
-import { getHighlighter } from 'shikiji'
+import type { Highlighter } from 'shiki'
+import { getHighlighter } from 'shiki'
 import { ref } from 'vue'
 
 export const shiki = ref<Highlighter>()

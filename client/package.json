@@ -26,7 +26,7 @@
     "nuxt": "^3.9.3",
     "pretty": "^2.0.0",
     "scule": "^1.2.0",
-    "shikiji": "^0.9.19",
+    "shiki": "^1.0.0-beta.3",
     "splitpanes": "^3.1.5",
     "vue-component-meta": "^1.8.27"
   }
