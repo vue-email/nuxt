@@ -25,6 +25,9 @@ export default defineEventHandler(async (event: any) => {
         if (prop.type === 'array')
           acc[prop.label] = destr(prop.value) || []
 
+        if (prop.type === 'date')
+          acc[prop.label] = new Date(prop.value) || new Date()
+
         return acc
       }, {})
     }

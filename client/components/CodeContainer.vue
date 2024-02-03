@@ -62,11 +62,6 @@ const items = computed(() => {
         icon: 'i-ph-text-t-duotone',
         code: template.value.txt,
       },
-      {
-        key: 'props',
-        label: 'Props',
-        icon: 'i-ph-code-duotone',
-      },
     ]
   }
   else if (editorCode.value.id === 'html') {
@@ -92,6 +87,14 @@ const items = computed(() => {
       icon: 'i-ph-file-vue-duotone',
       code: template.value.vue,
     })
+  }
+
+  if (emailProps.value.length) {
+    arr.push({
+      key: 'props',
+      label: 'Props',
+      icon: 'i-ph-code-duotone',
+    } as any)
   }
 
   return arr
@@ -130,7 +133,7 @@ watchEffect(() => {
 
     <template #item="{ item }">
       <div v-if="item.code" class="w-full h-full" v-html="highlight(item.code, item.key)" />
-      <div v-else-if="item.key === 'props'" class="w-full h-full">
+      <div v-else-if="item.key === 'props' && email.props && email.props.length" class="w-full h-full">
         <UContainer class="py-5 flex flex-col gap-y-4">
           <template v-for="prop in email.props" :key="prop.label">
             <UFormGroup v-if="prop.type === 'string'" size="lg" :label="prop.label" :description="prop.description">
@@ -138,6 +141,9 @@ watchEffect(() => {
             </UFormGroup>
             <UFormGroup v-if="prop.type === 'number'" size="lg" :label="prop.label" :description="prop.description">
               <UInput v-model.number="prop.value" type="number" />
+            </UFormGroup>
+            <UFormGroup v-if="prop.type === 'date'" size="lg" :label="prop.label" :description="prop.description">
+              <UInput v-model="prop.value" type="datetime-local" :value="prop.value" />
             </UFormGroup>
             <UFormGroup v-if="prop.type === 'boolean'" size="lg" :label="prop.label" :description="prop.description">
               <UToggle v-model="prop.value" />

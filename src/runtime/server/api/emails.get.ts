@@ -124,6 +124,13 @@ export default defineEventHandler(async () => {
               }
             }
 
+            if (type === 'Date') {
+              return {
+                type: 'date',
+                value: value ? eval(value) : new Date().toISOString(),
+              }
+            }
+
             return {
               type: 'string',
               value: value ?? '',
