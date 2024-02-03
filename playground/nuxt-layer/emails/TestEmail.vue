@@ -59,9 +59,7 @@ const tokens = await codeToThemedTokens('<div class="foo">bar</div>', {
           <EText class="text-black text-[14px] leading-[24px]">
             Hello {{ username }},
           </EText>
-          <EText class="text-black text-[14px] leading-[24px]">
-            {{ $vueEmail.baseUrl }}
-          </EText>
+
           <EText class="text-black text-[14px] leading-[24px]">
             <strong>bukinoshita</strong> (
             <ELink
