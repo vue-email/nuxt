@@ -127,6 +127,8 @@ watchEffect(() => {
           </UTooltip>
         </template>
 
+        <UBadge v-if="item.key === 'props'" size="xs" label="Beta" variant="subtle" />
+
         <span v-if="selected" class="absolute -right-4 w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400" />
       </div>
     </template>
@@ -134,7 +136,7 @@ watchEffect(() => {
     <template #item="{ item }">
       <div v-if="item.code" class="w-full h-full" v-html="highlight(item.code, item.key)" />
       <div v-else-if="item.key === 'props' && email.props && email.props.length" class="w-full h-full">
-        <UContainer class="py-5 flex flex-col gap-y-4">
+        <UContainer class="py-5 flex flex-col gap-y-4 relative">
           <template v-for="prop in email.props" :key="prop.label">
             <UFormGroup v-if="prop.type === 'string'" size="lg" :label="prop.label" :description="prop.description">
               <UInput v-model="prop.value" type="text" />
