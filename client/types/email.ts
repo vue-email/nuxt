@@ -1,5 +1,3 @@
-import type { PropertyMeta } from 'vue-component-meta'
-
 export interface Email {
   label: string
   filename: string

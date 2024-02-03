@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { kebabCase, pascalCase, upperFirst } from 'scule'
+import { kebabCase, pascalCase } from 'scule'
 import { createComponentMetaCheckerByJsonConfig } from 'vue-component-meta'
 import { destr } from 'destr'
 import JSON5 from 'json5'
