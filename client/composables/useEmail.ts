@@ -1,26 +1,6 @@
 import pretty from 'pretty'
 import type { Result } from '@vue-email/compiler'
-import { upperFirst } from 'scule'
 import type { Email, Template } from '@/types/email'
-
-function removeQuotes(inputString: any) {
-  // Check if the input is a string and has at least two characters
-  if (typeof inputString === 'string' && inputString.length >= 2) {
-    // Check if the string starts and ends with double quotes
-    if (inputString[0] === '"' && inputString[inputString.length - 1] === '"') {
-      // Remove the quotes and return the modified string
-      return inputString.slice(1, -1)
-    }
-    else {
-      // If the string doesn't have quotes at the start and end, return the original string
-      return inputString
-    }
-  }
-  else {
-    // If the input is not a valid string, return an empty string or handle it accordingly
-    return ''
-  }
-}
 
 export function useEmail() {
   const emails = useState<Email[]>('emails')
@@ -28,12 +8,6 @@ export function useEmail() {
   const sending = useState<boolean>('sending', () => false)
   const refresh = useState<boolean>('refresh', () => false)
   const template = useState<Template>('template')
-  const props = useState<{
-    label: string
-    value: any
-    type: string
-    description?: string
-  }[]>('props')
 
   const { host } = useWindow()
 
@@ -51,7 +25,7 @@ export function useEmail() {
       emails.value = data.value
   }
 
-  const renderEmail = async () => {
+  const renderEmail = async (props?: Email['props']) => {
     if (!email.value)
       return null
 
@@ -59,7 +33,7 @@ export function useEmail() {
       method: 'POST',
       baseURL: host.value,
       body: {
-        props: props.value,
+        props,
       },
     })
 
@@ -78,37 +52,6 @@ export function useEmail() {
 
       if (found) {
         email.value = found
-        try {
-          if (found.props) {
-            props.value = found.props.map((prop) => {
-              const value = removeQuotes(prop.default) || ''
-              const destructuredType = prop.type.split('|').map((type) => {
-                if (type === 'string')
-                  return 'string'
-
-                if (type === 'number')
-                  return 'number'
-
-                if (type === 'boolean')
-                  return 'boolean'
-
-                if (type === 'object')
-                  return 'object'
-
-                return 'string'
-              })
-
-              return {
-                label: upperFirst(prop.name),
-                type: destructuredType[0],
-                value,
-              }
-            })
-          }
-        }
-        catch (error) {
-          console.error(error)
-        }
 
         await renderEmail()
       }
@@ -171,7 +114,6 @@ export function useEmail() {
     sending,
     refresh,
     template,
-    props,
     getEmail,
     sendTestEmail,
     renderEmail,

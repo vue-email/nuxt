@@ -52,6 +52,8 @@
     "@nuxt/kit": "^3.10.0",
     "@vue-email/compiler": "npm:@vue-email/compiler-edge@0.8.9-28446863.0aab8eb",
     "defu": "^6.1.4",
+    "destr": "^2.0.2",
+    "json5": "^2.2.3",
     "sirv": "^2.0.4",
     "vue-component-meta": "^1.8.27",
     "vue-email": "npm:vue-email-edge@0.8.7-28446842.1f6e4a0"
@@ -64,6 +66,7 @@
     "@nuxt/test-utils": "^3.11.0",
     "@types/node": "^20.11.10",
     "bumpp": "^9.3.0",
+    "destr": "^2.0.2",
     "eslint": "^8.56.0",
     "jiti": "^1.21.0",
     "nuxt": "^3.10.0",

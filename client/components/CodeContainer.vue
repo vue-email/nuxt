@@ -1,12 +1,16 @@
 <script lang="ts" setup>
 import { camelCase } from 'scule'
+import JsonEditorVue from 'json-editor-vue'
 import { copyTextToClipboard } from '@/util/copy-text-to-clipboard'
+import 'vanilla-jsoneditor/themes/jse-theme-dark.css'
 
 defineEmits(['setlang'])
 
 const toast = useToast()
 const { editorCode } = useTool()
-const { template, email, props, renderEmail } = useEmail()
+const { template, email, renderEmail } = useEmail()
+
+const emailProps = ref(email.value.props)
 
 function handleDownload(lang: 'html' | 'txt' | 'vue') {
   const content = template.value[lang]
@@ -94,6 +98,10 @@ const items = computed(() => {
 })
 
 const tab = ref(0)
+
+watchEffect(() => {
+  emailProps.value = email.value.props
+})
 </script>
 
 <template>
@@ -124,13 +132,34 @@ const tab = ref(0)
       <div v-if="item.code" class="w-full h-full" v-html="highlight(item.code, item.key)" />
       <div v-else-if="item.key === 'props'" class="w-full h-full">
         <UContainer class="py-5 flex flex-col gap-y-4">
-          <template v-for="(prop, idx) in props" :key="idx">
-            <UFormGroup v-if="prop.type === 'string'" :label="prop.label" :description="prop.description">
+          <template v-for="prop in email.props" :key="prop.label">
+            <UFormGroup v-if="prop.type === 'string'" size="lg" :label="prop.label" :description="prop.description">
               <UInput v-model="prop.value" type="text" />
             </UFormGroup>
-
-            <UButton label="Update" @click="renderEmail()" />
+            <UFormGroup v-if="prop.type === 'number'" size="lg" :label="prop.label" :description="prop.description">
+              <UInput v-model.number="prop.value" type="number" />
+            </UFormGroup>
+            <UFormGroup v-if="prop.type === 'boolean'" size="lg" :label="prop.label" :description="prop.description">
+              <UToggle v-model="prop.value" />
+            </UFormGroup>
+            <UFormGroup v-if="prop.type === 'object'" size="lg" :label="prop.label" :description="prop.description">
+              <JsonEditorVue
+                v-model="prop.value"
+                :class="[$colorMode.value === 'dark' ? 'jse-theme-dark' : 'light']"
+                class="json-editor-vue of-auto text-sm outline-none"
+                mode="tree" :navigation-bar="false" :indentation="2" :tab-size="2"
+              />
+            </UFormGroup>
+            <UFormGroup v-if="prop.type === 'array'" size="lg" :label="prop.label" :description="prop.description">
+              <JsonEditorVue
+                v-model="prop.value"
+                :class="[$colorMode.value === 'dark' ? 'jse-theme-dark' : 'light']"
+                class="json-editor-vue of-auto text-sm outline-none"
+                mode="tree" :navigation-bar="false" :indentation="2" :tab-size="2"
+              />
+            </UFormGroup>
           </template>
+          <UButton size="lg" icon="i-ph-floppy-disk" block label="Update Props" @click="renderEmail(emailProps)" />
         </UContainer>
       </div>
     </template>
@@ -149,5 +178,26 @@ const tab = ref(0)
   border: none;
   overflow: auto;
   white-space: break-spaces;
+}
+
+.dark,
+.jse-theme-dark {
+  --jse-panel-background: #111 !important;
+  --jse-theme-color: #111 !important;
+  --jse-text-color-inverse: #fff !important;
+  --jse-main-border: none !important;
+}
+
+.json-editor-vue .no-main-menu {
+  border: none !important;
+}
+
+.json-editor-vue .jse-main {
+  min-height: 1em !important;
+}
+
+.json-editor-vue .jse-contents {
+  border-width: 0 !important;
+  border-radius: 5px !important;
 }
 </style>

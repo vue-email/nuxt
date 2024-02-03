@@ -6,6 +6,31 @@ defineProps({
     type: String,
     default: 'John Doe',
   },
+  string: {
+    type: String,
+  },
+  number: {
+    type: Number,
+    default: 0,
+  },
+  boolean: {
+    type: Boolean,
+    default: true,
+  },
+  array: {
+    type: Array,
+    default: () => [
+      {
+        key: 'value',
+      },
+    ],
+  },
+  object: {
+    type: Object,
+    default: () => ({
+      key: 'value',
+    }),
+  },
 })
 
 const main = {
@@ -73,6 +98,14 @@ const footer = {
         <EText :style="title">
           <strong>@{{ username }}</strong>, a personal access was created on your account.
         </EText>
+
+        <p>
+          {{ string }}
+          {{ number }}
+          {{ boolean }}
+          {{ array }}
+          {{ object }}
+        </p>
 
         <ESection :style="section">
           <EText :style="text">

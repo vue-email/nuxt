@@ -6,6 +6,12 @@ export interface Email {
   size: number
   created: Date
   modified: Date
+  props: {
+    label: string
+    value: any
+    type: string
+    description?: string
+  }[]
 }
 
 export interface Directory {

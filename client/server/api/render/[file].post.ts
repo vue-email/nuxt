@@ -1,3 +1,4 @@
+import { destr } from 'destr'
 import { useCompiler } from '#vue-email'
 import { createError, defineEventHandler } from '#imports'
 
@@ -9,7 +10,21 @@ export default defineEventHandler(async (event: any) => {
     let props: any = null
     if (body && body.props) {
       props = body.props.reduce((acc: Record<string, any>, prop: any) => {
-        acc[prop.label.toLowerCase()] = prop.value
+        if (prop.type === 'string')
+          acc[prop.label] = destr(prop.value) || ''
+
+        if (prop.type === 'number')
+          acc[prop.label] = destr(prop.value) || 0
+
+        if (prop.type === 'boolean')
+          acc[prop.label] = destr(prop.value) || false
+
+        if (prop.type === 'object')
+          acc[prop.label] = destr(prop.value) || {}
+
+        if (prop.type === 'array')
+          acc[prop.label] = destr(prop.value) || []
+
         return acc
       }, {})
     }
