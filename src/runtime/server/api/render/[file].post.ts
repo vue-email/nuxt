@@ -1,6 +1,6 @@
 import { destr } from 'destr'
 import { useCompiler } from '#vue-email'
-import { createError, defineEventHandler } from '#imports'
+import { createError, defineEventHandler, readBody } from '#imports'
 
 export default defineEventHandler(async (event: any) => {
   try {
