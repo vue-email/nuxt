@@ -10,7 +10,7 @@ const toast = useToast()
 const { editorCode } = useTool()
 const { template, email, renderEmail } = useEmail()
 
-const emailProps = ref(email.value.props)
+const emailProps = ref(JSON.parse(JSON.stringify(email.value.props)))
 
 function handleDownload(lang: 'html' | 'txt' | 'vue') {
   const content = template.value[lang]
@@ -103,7 +103,7 @@ const items = computed(() => {
 const tab = ref(0)
 
 watchEffect(() => {
-  emailProps.value = email.value.props
+  emailProps.value = JSON.parse(JSON.stringify(email.value.props))
 })
 </script>
 
