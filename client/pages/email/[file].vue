@@ -4,12 +4,12 @@ const route = useRoute()
 const { getEmail, template } = useEmail()
 const { horizontalSplit, previewMode } = useTool({
   async onReload() {
-    await getEmail(`${route.params.file}`)
+    await getEmail(route.params.file as string)
   },
 })
 
 onMounted(async () => {
-  await getEmail(`${route.params.file}`)
+  await getEmail(route.params.file as string)
 })
 
 const showBoth = computed(() => previewMode.value.id === 'both')

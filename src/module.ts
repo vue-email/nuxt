@@ -129,9 +129,9 @@ export default defineNuxtModule<ModuleOptions>({
         lazy: true,
       })
       addServerHandler({
-        handler: resolve('./runtime/server/api/render/[file].get'),
+        handler: resolve('./runtime/server/api/render/[file].post'),
         route: '/api/render/:file',
-        method: 'get',
+        method: 'post',
         lazy: true,
       })
 

@@ -1,17 +1,13 @@
 import pretty from 'pretty'
 import type { Result } from '@vue-email/compiler'
-import type { Email } from '@/types/email'
+import type { Email, Template } from '@/types/email'
 
 export function useEmail() {
   const emails = useState<Email[]>('emails')
   const email = useState<Email>('email')
   const sending = useState<boolean>('sending', () => false)
   const refresh = useState<boolean>('refresh', () => false)
-  const template = useState<{
-    vue: string
-    html: string
-    txt: string
-  }>('template')
+  const template = useState<Template>('template')
 
   const { host } = useWindow()
 
@@ -29,23 +25,25 @@ export function useEmail() {
       emails.value = data.value
   }
 
-  const renderEmail = async () => {
+  const renderEmail = async (props?: Email['props']) => {
     if (!email.value)
       return null
 
     const { data } = await useFetch<Result>(`/api/render/${email.value.filename}`, {
+      method: 'POST',
       baseURL: host.value,
+      body: {
+        props,
+      },
     })
 
     if (data.value) {
-      return {
+      template.value = {
         vue: email.value.content,
         html: pretty(data.value.html),
         txt: data.value.text,
-      }
+      } as Template
     }
-
-    return null
   }
 
   const getEmail = async (filename: string) => {
@@ -55,10 +53,7 @@ export function useEmail() {
       if (found) {
         email.value = found
 
-        await renderEmail().then((value) => {
-          if (value)
-            template.value = value
-        })
+        await renderEmail()
       }
     }
   }

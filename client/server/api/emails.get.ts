@@ -1,6 +1,8 @@
 import path from 'node:path'
 import { kebabCase, pascalCase } from 'scule'
 import { createComponentMetaCheckerByJsonConfig } from 'vue-component-meta'
+import { destr } from 'destr'
+import JSON5 from 'json5'
 import type { Email } from '~/types/email'
 import { createError, defineEventHandler, useStorage } from '#imports'
 
@@ -82,6 +84,65 @@ export default defineEventHandler(async () => {
           return 0
         })
         emailProps = emailProps.map(stripeTypeScriptInternalTypesSchema)
+        const destructuredProps = emailProps.map((prop) => {
+          const destructuredType = prop.type.split('|').map((type) => {
+            type = type.trim()
+            const value = prop.default
+
+            if (type === 'string') {
+              return {
+                type: 'string',
+                value: destr(value) ?? '',
+              }
+            }
+
+            if (type === 'number') {
+              return {
+                type: 'number',
+                value: destr(value) || 0,
+              }
+            }
+
+            if (type === 'boolean') {
+              return {
+                type: 'boolean',
+                value: destr(value) || false,
+              }
+            }
+
+            if (type === 'object' || type.includes('Record') || type.includes('Record<')) {
+              return {
+                type: 'object',
+                value: value ? JSON5.parse(value) : {},
+              }
+            }
+
+            if (type === 'array' || type.includes('[]') || type.includes('Array') || type.includes('Array<')) {
+              return {
+                type: 'array',
+                value: value ? JSON5.parse(value) : [],
+              }
+            }
+
+            if (type === 'Date') {
+              return {
+                type: 'date',
+                value: value ? eval(value) : new Date().toISOString(),
+              }
+            }
+
+            return {
+              type: 'string',
+              value: value ?? '',
+            }
+          })
+
+          return {
+            label: prop.name,
+            type: destructuredType[0].type,
+            value: destructuredType[0].value,
+          }
+        })
 
         const content = (await useStorage('assets:emails').getItem(
           email,
@@ -99,7 +160,7 @@ export default defineEventHandler(async () => {
           size: emailData.size,
           created: emailData.birthtime,
           modified: emailData.mtime,
-          props: emailProps,
+          props: destructuredProps,
         }
       }),
     )
@@ -114,6 +175,8 @@ export default defineEventHandler(async () => {
     return emails
   }
   catch (error) {
+    console.error(error)
+
     throw createError({
       statusCode: 500,
       statusMessage: 'Internal Server Error',
