@@ -47,6 +47,7 @@ export interface ModuleOptions {
   autoImport?: boolean
   useNuxtTailwind?: boolean
   tailwind?: VueEmailPluginOptions['tailwind']
+  emailsDir?: string
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -67,6 +68,7 @@ export default defineNuxtModule<ModuleOptions>({
       autoImport: false,
       useNuxtTailwind: true,
       tailwind: undefined,
+      emailsDir: '/emails',
     }
   },
   async setup(options, nuxt) {
@@ -78,7 +80,7 @@ export default defineNuxtModule<ModuleOptions>({
       options,
     )
 
-    let tempaltesDir = '/emails'
+    let tempaltesDir = resolve(options.emailsDir) || resolve('/emails')
 
     for (const layer of nuxt.options._layers) {
       const templatePath = join(layer.cwd, '/emails')
@@ -89,6 +91,8 @@ export default defineNuxtModule<ModuleOptions>({
       tempaltesDir = templatePath
       break
     }
+
+    nuxt.options.runtimeConfig.public.vueEmail.emailsDir = tempaltesDir
 
     if (hasNuxtModule('@nuxtjs/tailwindcss') && options.useNuxtTailwind) {
       // @ts-expect-error runtime type
