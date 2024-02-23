@@ -47,7 +47,7 @@ export default defineEventHandler(async () => {
       {
         extends: path.join(rootDir, '..', 'tsconfig.json'),
         skipLibCheck: true,
-        include: ['./emails/**/*.vue'],
+        include: ['**/*.vue'],
         exclude: [],
       },
       {
