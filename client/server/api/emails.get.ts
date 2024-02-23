@@ -4,22 +4,6 @@ import { createComponentMetaCheckerByJsonConfig } from 'vue-component-meta'
 import { destr } from 'destr'
 import JSON5 from 'json5'
 import type { Email } from '~/types/email'
-import { createError, defineEventHandler, useStorage } from '#imports'
-
-const rootDir = process.cwd()
-const checker = createComponentMetaCheckerByJsonConfig(
-  rootDir,
-  {
-    extends: `${rootDir}/tsconfig.json`,
-    skipLibCheck: true,
-    include: ['emails/**/*'],
-    exclude: [],
-  },
-  {
-    forceUseTs: true,
-    printer: { newLine: 1 },
-  },
-)
 
 function stripeTypeScriptInternalTypesSchema(type: any): any {
   if (!type)
@@ -55,6 +39,21 @@ function stripeTypeScriptInternalTypesSchema(type: any): any {
 export default defineEventHandler(async () => {
   try {
     const nitroEmails = await useStorage('assets:emails').getKeys()
+    const rootDir = useRuntimeConfig().public.vueEmail.emailsDir || process.cwd()
+
+    const checker = createComponentMetaCheckerByJsonConfig(
+      rootDir,
+      {
+        extends: path.join(rootDir, '..', 'tsconfig.json'),
+        skipLibCheck: true,
+        include: ['**/*.vue'],
+        exclude: [],
+      },
+      {
+        forceUseTs: true,
+        printer: { newLine: 1 },
+      },
+    )
 
     const emails: Email[] = await Promise.all(
       nitroEmails.map(async (email) => {
@@ -64,85 +63,93 @@ export default defineEventHandler(async () => {
         const emailData = JSON.parse(data)
         const emailPath = path.join(
           rootDir,
-          'emails',
           email.replaceAll(':', '/'),
         )
-        const { props } = checker.getComponentMeta(emailPath)
-        let emailProps = (props).filter(prop => !prop.global).sort((a, b) => {
-          if (!a.required && b.required)
-            return 1
 
-          if (a.required && !b.required)
-            return -1
+        let destructuredProps: any[] = []
 
-          if (a.type === 'boolean' && b.type !== 'boolean')
-            return 1
+        try {
+          const { props } = checker.getComponentMeta(emailPath)
+          let emailProps = (props).filter(prop => !prop.global).sort((a, b) => {
+            if (!a.required && b.required)
+              return 1
 
-          if (a.type !== 'boolean' && b.type === 'boolean')
-            return -1
+            if (a.required && !b.required)
+              return -1
 
-          return 0
-        })
-        emailProps = emailProps.map(stripeTypeScriptInternalTypesSchema)
-        const destructuredProps = emailProps.map((prop) => {
-          const destructuredType = prop.type.split('|').map((type) => {
-            type = type.trim()
-            const value = prop.default
+            if (a.type === 'boolean' && b.type !== 'boolean')
+              return 1
 
-            if (type === 'string') {
-              return {
-                type: 'string',
-                value: destr(value) ?? '',
-              }
-            }
+            if (a.type !== 'boolean' && b.type === 'boolean')
+              return -1
 
-            if (type === 'number') {
-              return {
-                type: 'number',
-                value: destr(value) || 0,
-              }
-            }
-
-            if (type === 'boolean') {
-              return {
-                type: 'boolean',
-                value: destr(value) || false,
-              }
-            }
-
-            if (type === 'object' || type.includes('Record') || type.includes('Record<')) {
-              return {
-                type: 'object',
-                value: value ? JSON5.parse(value) : {},
-              }
-            }
-
-            if (type === 'array' || type.includes('[]') || type.includes('Array') || type.includes('Array<')) {
-              return {
-                type: 'array',
-                value: value ? JSON5.parse(value) : [],
-              }
-            }
-
-            if (type === 'Date') {
-              return {
-                type: 'date',
-                value: value ? eval(value) : new Date().toISOString(),
-              }
-            }
-
-            return {
-              type: 'string',
-              value: value ?? '',
-            }
+            return 0
           })
 
-          return {
-            label: prop.name,
-            type: destructuredType[0].type,
-            value: destructuredType[0].value,
-          }
-        })
+          emailProps = emailProps.map(stripeTypeScriptInternalTypesSchema)
+          destructuredProps = emailProps.map((prop) => {
+            const destructuredType = prop.type.split('|').map((type) => {
+              type = type.trim()
+              const value = prop.default
+
+              if (type === 'string') {
+                return {
+                  type: 'string',
+                  value: destr(value) ?? '',
+                }
+              }
+
+              if (type === 'number') {
+                return {
+                  type: 'number',
+                  value: destr(value) || 0,
+                }
+              }
+
+              if (type === 'boolean') {
+                return {
+                  type: 'boolean',
+                  value: destr(value) || false,
+                }
+              }
+
+              if (type === 'object' || type.includes('Record') || type.includes('Record<')) {
+                return {
+                  type: 'object',
+                  value: value ? JSON5.parse(value) : {},
+                }
+              }
+
+              if (type === 'array' || type.includes('[]') || type.includes('Array') || type.includes('Array<')) {
+                return {
+                  type: 'array',
+                  value: value ? JSON5.parse(value) : [],
+                }
+              }
+
+              if (type === 'Date') {
+                return {
+                  type: 'date',
+                  value: value ? eval(value) : new Date().toISOString(),
+                }
+              }
+
+              return {
+                type: 'string',
+                value: value ?? '',
+              }
+            })
+
+            return {
+              label: prop.name,
+              type: destructuredType[0].type,
+              value: destructuredType[0].value,
+            }
+          })
+        }
+        catch (error) {
+          console.warn('Error destructuring props', error)
+        }
 
         const content = (await useStorage('assets:emails').getItem(
           email,
