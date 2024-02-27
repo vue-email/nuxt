@@ -50,13 +50,13 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.10.0",
-    "@vue-email/compiler": "^0.8.13",
+    "@vue-email/compiler": "^0.8.14",
     "defu": "^6.1.4",
     "destr": "^2.0.2",
     "json5": "^2.2.3",
     "sirv": "^2.0.4",
     "vue-component-meta": "^1.8.27",
-    "vue-email": "^0.8.9"
+    "vue-email": "^0.8.10"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.3",
