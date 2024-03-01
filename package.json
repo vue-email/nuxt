@@ -1,7 +1,7 @@
 {
   "name": "@vue-email/nuxt",
   "type": "module",
-  "version": "0.8.18",
+  "version": "0.8.19",
   "packageManager": "pnpm@8.11.0",
   "description": "Nuxt package for vue-email",
   "author": "David Arenas <davejs136@gmail.com> (https://github.com/Dave136/)",
