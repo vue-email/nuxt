@@ -12,7 +12,8 @@ export async function useCompiler(
 ) {
   const vueEmailOptions = useRuntimeConfig().public.vueEmail as ModuleOptions
   let source = await useStorage(storageKey).getItem(filename)
-  if (source instanceof Uint8Array) source = new TextDecoder().decode(source)
+  if (source instanceof Uint8Array)
+    source = new TextDecoder().decode(source)
   const keys = await useStorage(storageKey).getKeys()
   const components: {
     name: string
@@ -20,7 +21,8 @@ export async function useCompiler(
   }[] = []
   for (const key of keys) {
     let value = await useStorage(storageKey).getItem(key)
-    if (value instanceof Uint8Array) value = new TextDecoder().decode(value)
+    if (value instanceof Uint8Array)
+      value = new TextDecoder().decode(value)
 
     if (value && key.endsWith('.vue')) {
       components.push({
