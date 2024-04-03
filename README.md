@@ -37,14 +37,7 @@ Official Nuxt module for Vue Email. Build email templates with Vue components.
 1. Add `@vue-email/nuxt` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D @vue-email/nuxt
-
-# Using yarn
-yarn add --dev @vue-email/nuxt
-
-# Using npm
-npm install --save-dev @vue-email/nuxt
+npx nuxi@latest module add vue-email
 ```
 
 2. Add `@vue-email/nuxt` to the `modules` section of `nuxt.config.ts`
