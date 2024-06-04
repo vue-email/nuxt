@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EBody, EColumn, EContainer, EHead, EHeading, EHtml, EImg, EPreview, ERow, ESection, EText } from 'vue-email'
+import { EBody, EColumn, EContainer, EHead, EHeading, EHtml, EImg, EPreview, ERow, ESection, EText } from 'vue-email-edge'
 import { getRandomInt } from '../utils/index'
 
 const props = defineProps({

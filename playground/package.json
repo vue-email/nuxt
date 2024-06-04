@@ -10,7 +10,6 @@
     "analyze": "nuxt analyze"
   },
   "devDependencies": {
-    "nuxt": "^3.11.2",
-    "vue-email": "npm:vue-email-edge@0.8.11-28625013.083e479"
+    "nuxt": "^3.11.2"
   }
 }

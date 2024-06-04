@@ -6,7 +6,7 @@ import {
   hasNuxtModule,
 } from '@nuxt/kit'
 import { defu } from 'defu'
-import type {  VueEmailPluginOptions } from 'vue-email'
+import type {  VueEmailPluginOptions } from 'vue-email-edge'
 import vue from '@vitejs/plugin-vue'
 
 
@@ -36,7 +36,6 @@ const components = [
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   baseUrl?: string | null
-  playground?: boolean
   autoImport?: boolean
   useNuxtTailwind?: boolean
   tailwind?: VueEmailPluginOptions['tailwind']
@@ -52,16 +51,11 @@ export default defineNuxtModule<ModuleOptions>({
       bridge: false,
     },
   },
-  defaults(nuxt) {
-    const isDev = process.env.NODE_ENV === 'development' || nuxt.options.dev
-
-    return {
+  defaults: {
       baseUrl: null,
-      playground: isDev,
       autoImport: false,
       useNuxtTailwind: true,
       tailwind: undefined,
-    }
   },
   async setup(options, nuxt) {
 
@@ -94,12 +88,12 @@ export default defineNuxtModule<ModuleOptions>({
         addComponent({
           name: component,
           export: component,
-          filePath: 'vue-email',
+          filePath: 'vue-email-edge',
         })
       })
 
       addImportsSources({
-        from: 'vue-email',
+        from: 'vue-email-edge',
         imports: ['useRender'],
       })
     }
