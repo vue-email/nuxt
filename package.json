@@ -51,7 +51,7 @@
     "json5": "^2.2.3",
     "sirv": "^2.0.4",
     "vue-component-meta": "^2.0.19",
-    "vue-email-edge": "0.8.11-28625169.b0e7800",
+    "vue-email-edge": "0.8.11-28625178.e947738",
     "@vitejs/plugin-vue": "^5.0.5"
   },
   "devDependencies": {

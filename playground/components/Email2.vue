@@ -59,7 +59,7 @@ const footer = {
     <EPreview> The sales intelligence platform that helps you uncover qualified leads. </EPreview>
     <EBody :style="main">
       <EContainer :style="container">
-        <EImg src="/static/koala-logo.png" width="170" height="50" alt="Koala" :style="logo" />
+        <EImg src="https://vue-email-demo.vercel.app/static/koala-logo.png" width="170" height="50" alt="Koala" :style="logo" />
         <EText :style="paragraph"> Hi {{ userFirstname }}, </EText>
         <EText :style="paragraph"> Welcome to Koala, the sales intelligence platform that helps you uncover qualified leads and close deals faster. </EText>
         <ESection :style="btnContainer">
