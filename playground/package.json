@@ -10,7 +10,7 @@
     "analyze": "nuxt analyze"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.11.2",
-    "nuxt": "latest"
+    "nuxt": "^3.11.2",
+    "vue-email": "npm:vue-email-edge@0.8.11-28625013.083e479"
   }
 }

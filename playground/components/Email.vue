@@ -1,4 +1,7 @@
-<script setup>
+<script setup lang="ts">
+import { EBody, EColumn, EContainer, EHead, EHeading, EHtml, EImg, EPreview, ERow, ESection, EText } from 'vue-email'
+import { getRandomInt } from '../utils/index'
+
 const props = defineProps({
   userFirstName: {
     type: String,
@@ -78,11 +81,14 @@ const containerImageFooter = {
     <EBody :style="main">
       <EContainer>
         <ESection :style="logo">
-          <EImg src="/static/yelp-logo.png" />
+          <EImg src="https://vue-email-demo.vercel.app/static/yelp-logo.png" />
         </ESection>
 
         <ESection :style="content">
-          <EImg width="620" src="/static/yelp-header.png" />
+          <EImg
+            width="620"
+            src="https://vue-email-demo.vercel.app/static/yelp-header.png"
+          />
 
           <ERow
             :style="{
@@ -136,16 +142,22 @@ const containerImageFooter = {
             </EColumn>
           </ERow>
           <ERow :style="{ ...boxInfos, paddingTop: '0' }">
-            <EColumn :style="containerButton" col-span="{2}">
-              <EButton href="#" :style="button">
-                Learn More
-              </EButton>
+            <EColumn
+              :style="containerButton"
+              col-span="{2}"
+            >
+              <EText :style="button">
+                Learn More {{ getRandomInt(1, 10) }}
+              </EText>
             </EColumn>
           </ERow>
         </ESection>
 
         <ESection :style="containerImageFooter">
-          <EImg width="620" src="/static/yelp-footer.png" />
+          <EImg
+            width="620"
+            src="https://vue-email-demo.vercel.app/static/yelp-footer.png"
+          />
         </ESection>
 
         <EText

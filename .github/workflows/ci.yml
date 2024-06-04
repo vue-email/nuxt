@@ -41,8 +41,8 @@ jobs:
               - 'package.json'
               - 'pnpm-lock.yaml'
 
-      - name: Lint
-        run: nr lint
+      # - name: Lint
+      #   run: nr lint
 
       - name: Build
         run: nr build

@@ -1,4 +1,2 @@
 packages:
-  - client
   - playground
-  - layer-test
