@@ -46,13 +46,13 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.2",
+    "@vitejs/plugin-vue": "^5.0.5",
     "defu": "^6.1.4",
     "destr": "^2.0.3",
     "json5": "^2.2.3",
     "sirv": "^2.0.4",
     "vue-component-meta": "^2.0.19",
-    "vue-email-edge": "0.8.11-28625178.e947738",
-    "@vitejs/plugin-vue": "^5.0.5"
+    "vue-email-edge": "0.8.11-28627007.a49db55"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.20.0",
