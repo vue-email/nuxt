@@ -30,8 +30,8 @@ importers:
         specifier: ^2.0.19
         version: 2.0.19(typescript@5.4.5)
       vue-email-edge:
-        specifier: 0.8.11-28627007.a49db55
-        version: 0.8.11-28627007.a49db55(typescript@5.4.5)
+        specifier: 0.8.11-28628304.31f4052
+        version: 0.8.11-28628304.31f4052(typescript@5.4.5)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.20.0
@@ -1531,9 +1531,6 @@ packages:
     resolution: {integrity: sha512-Z9zHYk7vY9S9WYz8xGf53oMDDQ5Di9Gn0/N0r/ifxEXwLgCcS/5EI3zqquiifXSnqWQJBD7pI18jQFwMgEq0Gw==}
     peerDependencies:
       vue: ^3.3.8
-
-  '@vue-email/satori-html@0.3.3':
-    resolution: {integrity: sha512-9KichYcUinfT9K6n2SXuBHMDHxWHjiEAStWcQqBiCl80+ZBKI5p0Yezaz7lGd5Pu9xP7Rwr5ofKN50XSCdjYNA==}
 
   '@vue-email/tailwind@0.0.6':
     resolution: {integrity: sha512-+t3yC1ym2fwa2KexOvdMDgB1Thpj3dcmMEztjSj6fa2tcuWmj/fTn+5yskzjtrokyqtc4dAqe7Da7uj1/j+dww==}
@@ -5303,8 +5300,8 @@ packages:
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
-  vue-email-edge@0.8.11-28627007.a49db55:
-    resolution: {integrity: sha512-KlUHYtStZPsdWC/sgGSN4YcRuFoNzXWlaWx9aOVy6MPM2tMv1gCenjCR16syVPUTvVU5zcxYY50iHhK/07pBLQ==}
+  vue-email-edge@0.8.11-28628304.31f4052:
+    resolution: {integrity: sha512-703GjOSTk8ETyXUkObwU+fzPYC+eqTiFwKc3h8ahb/F62MX0swz0wmiH34Qq7+BB8lWOc46POcZ6LvP7mn3R7w==}
     hasBin: true
 
   vue-email@0.8.11:
@@ -7257,10 +7254,6 @@ snapshots:
       - ts-node
       - typescript
       - utf-8-validate
-
-  '@vue-email/satori-html@0.3.3':
-    dependencies:
-      ultrahtml: 1.5.3
 
   '@vue-email/tailwind@0.0.6':
     dependencies:
@@ -11533,10 +11526,9 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-email-edge@0.8.11-28627007.a49db55(typescript@5.4.5):
+  vue-email-edge@0.8.11-28628304.31f4052(typescript@5.4.5):
     dependencies:
       '@vue-email/cli': 0.0.14(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))
-      '@vue-email/satori-html': 0.3.3
       isomorphic-dompurify: 2.11.0
       postcss: 8.4.38
       postcss-css-variables: 0.19.0(postcss@8.4.38)

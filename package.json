@@ -52,7 +52,7 @@
     "json5": "^2.2.3",
     "sirv": "^2.0.4",
     "vue-component-meta": "^2.0.19",
-    "vue-email-edge": "0.8.11-28627007.a49db55"
+    "vue-email-edge": "0.8.11-28628304.31f4052"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.20.0",
